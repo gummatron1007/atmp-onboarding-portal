@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 3: Facebook Setup | ATMP Onboarding</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      margin-bottom: 36px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid #e2e8f0;
+      background: white;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 16px 14px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      background: white;
+      color: #64748b;
+      border: none;
+      border-right: 1.5px solid #e2e8f0;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .tab-btn:last-child { border-right: none; }
+    .tab-btn.active {
+      background: #2563EB;
+      color: white;
+    }
+    .tab-btn .tab-num {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      opacity: 0.7;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663168173655/khfg9Evpz9UYPU8Z3zJ6fK/atmp-logo-1_ab4056ba.png" alt="AT Media Partners" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+    <span style="display:none; font-size:20px; font-weight:900; color:#0f172a; letter-spacing:-0.5px;">ATMP<span style="color:#2563EB;">.</span></span>
+  </a>
+  <span class="nav-right">Client Onboarding Portal</span>
+</nav>
+
+<div class="progress-wrap">
+  <div class="progress-label">Your Progress</div>
+  <div class="steps-row">
+    <a href="step-1.html" class="step-pill done"><span class="num">1</span> Agreement</a>
+    <span class="step-divider">›</span>
+    <a href="step-2.html" class="step-pill done"><span class="num">2</span> WhatsApp</a>
+    <span class="step-divider">›</span>
+    <a href="step-3.html" class="step-pill active"><span class="num">3</span> Facebook</a>
+    <span class="step-divider">›</span>
+    <a href="step-4.html" class="step-pill"><span class="num">4</span> CRM Login</a>
+    <span class="step-divider">›</span>
+    <a href="step-5.html" class="step-pill"><span class="num">5</span> Training</a>
+    <span class="step-divider">›</span>
+    <a href="step-6.html" class="step-pill"><span class="num">6</span> Creatives</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="step-badge">📘 Step 3 of 6</div>
+  <h1 class="page-title">Facebook Page &<br><span style="color:#2563EB;">Ad Account Setup</span></h1>
+  <p class="page-subtitle">This step has three parts. Watch each video and follow along — it takes about 10 minutes total. If you already have a Business Manager and Ad Account, skip to Part 3.</p>
+
+  <div class="alert yellow">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-text"><strong>Important:</strong> Facebook is strict with their policies. We recommend creating a Facebook page under your business name to run ads from — this keeps your personal page separate and protected.</div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('tab1', this)">
+      <span class="tab-num">Part 1</span>
+      Business Portfolio Setup
+    </button>
+    <button class="tab-btn" onclick="showTab('tab2', this)">
+      <span class="tab-num">Part 2</span>
+      Ad Account Setup
+    </button>
+    <button class="tab-btn" onclick="showTab('tab3', this)">
+      <span class="tab-num">Part 3</span>
+      Give Us Access
+    </button>
+  </div>
+
+  <!-- TAB 1 -->
+  <div id="tab1" class="tab-content active">
+    <div class="video-container">
+      <iframe src="https://www.loom.com/embed/baa476687c8f439a954f879f3429d42c" allowfullscreen></iframe>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="card-icon">📋</span> What this video covers</div>
+      <ul class="checklist">
+        <li>How to create your Facebook Business Portfolio (Business Manager)</li>
+        <li>Setting up your business name and details correctly</li>
+        <li>Connecting your Facebook Page to the Business Manager</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="card-icon">📄</span> Resources &amp; Downloads</div>
+      <p style="margin-bottom:20px;">Download the step-by-step Facebook setup guide to follow along:</p>
+      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" class="btn btn-secondary">📄 Facebook Set Up Document</a>
+    </div>
+    <div style="text-align:right; margin-top:28px;">
+      <button class="btn btn-primary" onclick="showTab('tab2', document.querySelectorAll('.tab-btn')[1])">Next: Ad Account Setup &rarr;</button>
+    </div>
+  </div>
+
+  <!-- TAB 2 -->
+  <div id="tab2" class="tab-content">
+    <div class="video-container">
+      <iframe src="https://www.loom.com/embed/d1286f1330154d19810c08d514dc6cf9" allowfullscreen></iframe>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="card-icon">📋</span> What this video covers</div>
+      <ul class="checklist">
+        <li>How to create an Ad Account inside your Business Manager</li>
+        <li>Setting the correct currency and time zone</li>
+        <li>Adding a payment method to your Ad Account</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="card-icon">📄</span> Resources &amp; Downloads</div>
+      <p style="margin-bottom:20px;">Same setup guide applies — refer to the Facebook Ad Account section:</p>
+      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" class="btn btn-secondary">📄 Facebook Set Up Document</a>
+    </div>
+    <div style="display:flex; justify-content:space-between; margin-top:28px;">
+      <button class="btn btn-secondary" onclick="showTab('tab1', document.querySelectorAll('.tab-btn')[0])">&larr; Back</button>
+      <button class="btn btn-primary" onclick="showTab('tab3', document.querySelectorAll('.tab-btn')[2])">Next: Give Us Access &rarr;</button>
+    </div>
+  </div>
+
+  <!-- TAB 3 -->
+  <div id="tab3" class="tab-content">
+    <div class="video-container">
+      <iframe src="https://www.loom.com/embed/7b20ed0f8c9f45fd9388d49aad98aaec" allowfullscreen></iframe>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="card-icon">📋</span> What this video covers</div>
+      <ul class="checklist">
+        <li>How to grant AT Media Partners partner access to your Business Manager</li>
+        <li>Giving access to your Facebook Page and Ad Account</li>
+        <li>Using the Leadsie tool below to connect in one click</li>
+      </ul>
+    </div>
+
+    <div class="alert green">
+      <span class="alert-icon">✅</span>
+      <div class="alert-text"><strong>Use the tool below to give us access in one click.</strong> Simply click "Connect Facebook", select your Page and Ad Account, and we'll be connected instantly — no manual settings required.</div>
+    </div>
+
+    <div class="leadsie-wrap">
+      <iframe src="https://app.leadsie.com/embed/connect/at-media-partners/manage" allowfullscreen></iframe>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top:28px;">
+      <button class="btn btn-secondary" onclick="showTab('tab2', document.querySelectorAll('.tab-btn')[1])">&larr; Back</button>
+      <a href="step-4.html" class="btn btn-primary">Access Given — Next Step &rarr;</a>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="step-2.html" class="btn btn-secondary">&larr; Back to Step 2</a>
+    <a href="step-4.html" class="btn btn-primary">Step 3 Complete — Next &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p>AT Media Partners &mdash; <a href="https://atmediapartners.com">atmediapartners.com</a></p>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
