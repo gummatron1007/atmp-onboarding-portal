@@ -34,6 +34,10 @@
       background: #2563EB;
       color: white;
     }
+    .tab-btn:focus-visible {
+      outline: 3px solid #93c5fd;
+      outline-offset: -3px;
+    }
     .tab-btn .tab-num {
       display: block;
       font-size: 10px;
@@ -51,8 +55,8 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663168173655/khfg9Evpz9UYPU8Z3zJ6fK/atmp-logo-1_ab4056ba.png" alt="AT Media Partners" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
-    <span style="display:none; font-size:20px; font-weight:900; color:#0f172a; letter-spacing:-0.5px;">ATMP<span style="color:#2563EB;">.</span></span>
+    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663168173655/khfg9Evpz9UYPU8Z3zJ6fK/atmp-logo-1_ab4056ba.png" alt="AT Media Partners" id="navLogoImg">
+    <span id="navLogoFallback" style="display:none; font-size:20px; font-weight:900; color:#0f172a; letter-spacing:-0.5px;">ATMP<span style="color:#2563EB;">.</span></span>
   </a>
   <span class="nav-right">Client Onboarding Portal</span>
 </nav>
@@ -64,7 +68,7 @@
     <span class="step-divider">›</span>
     <a href="step-2.html" class="step-pill done"><span class="num">2</span> WhatsApp</a>
     <span class="step-divider">›</span>
-    <a href="step-3.html" class="step-pill active"><span class="num">3</span> Facebook</a>
+    <span class="step-pill active" aria-current="step"><span class="num">3</span> Facebook</span>
     <span class="step-divider">›</span>
     <a href="step-4.html" class="step-pill"><span class="num">4</span> CRM Login</a>
     <span class="step-divider">›</span>
@@ -84,25 +88,29 @@
     <div class="alert-text"><strong>Important:</strong> Facebook is strict with their policies. We recommend creating a Facebook page under your business name to run ads from — this keeps your personal page separate and protected.</div>
   </div>
 
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="showTab('tab1', this)">
+  <div class="tab-nav" role="tablist" aria-label="Facebook setup parts">
+    <button type="button" class="tab-btn active" role="tab" id="tabbtn-tab1" aria-selected="true" aria-controls="tab1" data-tab="tab1">
       <span class="tab-num">Part 1</span>
       Business Portfolio Setup
     </button>
-    <button class="tab-btn" onclick="showTab('tab2', this)">
+    <button type="button" class="tab-btn" role="tab" id="tabbtn-tab2" aria-selected="false" aria-controls="tab2" data-tab="tab2" tabindex="-1">
       <span class="tab-num">Part 2</span>
       Ad Account Setup
     </button>
-    <button class="tab-btn" onclick="showTab('tab3', this)">
+    <button type="button" class="tab-btn" role="tab" id="tabbtn-tab3" aria-selected="false" aria-controls="tab3" data-tab="tab3" tabindex="-1">
       <span class="tab-num">Part 3</span>
       Give Us Access
     </button>
   </div>
 
   <!-- TAB 1 -->
-  <div id="tab1" class="tab-content active">
+  <div id="tab1" class="tab-content active" role="tabpanel" aria-labelledby="tabbtn-tab1">
     <div class="video-container">
-      <iframe src="https://www.loom.com/embed/baa476687c8f439a954f879f3429d42c" allowfullscreen></iframe>
+      <iframe
+        title="Part 1: Business Portfolio Setup walkthrough"
+        data-src="https://www.loom.com/embed/baa476687c8f439a954f879f3429d42c?hide_owner=true&hide_share=true&hide_title=true"
+        loading="lazy"
+        allowfullscreen></iframe>
     </div>
     <div class="card">
       <div class="card-title"><span class="card-icon">📋</span> What this video covers</div>
@@ -115,17 +123,21 @@
     <div class="card">
       <div class="card-title"><span class="card-icon">📄</span> Resources &amp; Downloads</div>
       <p style="margin-bottom:20px;">Download the step-by-step Facebook setup guide to follow along:</p>
-      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" class="btn btn-secondary">📄 Facebook Set Up Document</a>
+      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📄 Facebook Set Up Document</a>
     </div>
     <div style="text-align:right; margin-top:28px;">
-      <button class="btn btn-primary" onclick="showTab('tab2', document.querySelectorAll('.tab-btn')[1])">Next: Ad Account Setup &rarr;</button>
+      <button type="button" class="btn btn-primary" data-goto="tab2">Next: Ad Account Setup &rarr;</button>
     </div>
   </div>
 
   <!-- TAB 2 -->
-  <div id="tab2" class="tab-content">
+  <div id="tab2" class="tab-content" role="tabpanel" aria-labelledby="tabbtn-tab2" hidden>
     <div class="video-container">
-      <iframe src="https://www.loom.com/embed/d1286f1330154d19810c08d514dc6cf9" allowfullscreen></iframe>
+      <iframe
+        title="Part 2: Ad Account Setup walkthrough"
+        data-src="https://www.loom.com/embed/d1286f1330154d19810c08d514dc6cf9?hide_owner=true&hide_share=true&hide_title=true"
+        loading="lazy"
+        allowfullscreen></iframe>
     </div>
     <div class="card">
       <div class="card-title"><span class="card-icon">📋</span> What this video covers</div>
@@ -138,18 +150,22 @@
     <div class="card">
       <div class="card-title"><span class="card-icon">📄</span> Resources &amp; Downloads</div>
       <p style="margin-bottom:20px;">Same setup guide applies — refer to the Facebook Ad Account section:</p>
-      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" class="btn btn-secondary">📄 Facebook Set Up Document</a>
+      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📄 Facebook Set Up Document</a>
     </div>
     <div style="display:flex; justify-content:space-between; margin-top:28px;">
-      <button class="btn btn-secondary" onclick="showTab('tab1', document.querySelectorAll('.tab-btn')[0])">&larr; Back</button>
-      <button class="btn btn-primary" onclick="showTab('tab3', document.querySelectorAll('.tab-btn')[2])">Next: Give Us Access &rarr;</button>
+      <button type="button" class="btn btn-secondary" data-goto="tab1">&larr; Back</button>
+      <button type="button" class="btn btn-primary" data-goto="tab3">Next: Give Us Access &rarr;</button>
     </div>
   </div>
 
   <!-- TAB 3 -->
-  <div id="tab3" class="tab-content">
+  <div id="tab3" class="tab-content" role="tabpanel" aria-labelledby="tabbtn-tab3" hidden>
     <div class="video-container">
-      <iframe src="https://www.loom.com/embed/7b20ed0f8c9f45fd9388d49aad98aaec" allowfullscreen></iframe>
+      <iframe
+        title="Part 3: Granting AT Media Partners access walkthrough"
+        data-src="https://www.loom.com/embed/7b20ed0f8c9f45fd9388d49aad98aaec?hide_owner=true&hide_share=true&hide_title=true"
+        loading="lazy"
+        allowfullscreen></iframe>
     </div>
     <div class="card">
       <div class="card-title"><span class="card-icon">📋</span> What this video covers</div>
@@ -162,15 +178,30 @@
 
     <div class="alert green">
       <span class="alert-icon">✅</span>
-      <div class="alert-text"><strong>Use the tool below to give us access in one click.</strong> Simply click "Connect Facebook", select your Page and Ad Account, and we'll be connected instantly — no manual settings required.</div>
+      <div class="alert-text"><strong>Use the tool below to give us access in one click.</strong> Simply click "Connect Facebook", select your Page and Ad Account, and we'll be connected instantly — no manual settings required.<br><br><small><strong>Heads up:</strong> if the box below appears empty or shows a broken icon, an ad blocker or privacy extension (uBlock, AdBlock, Brave Shields, etc.) is most likely blocking it. Either pause the blocker for this page and refresh, or use the backup link below the box.</small></div>
     </div>
 
-    <div class="leadsie-wrap">
-      <iframe src="https://app.leadsie.com/embed/connect/at-media-partners/manage" allowfullscreen></iframe>
+    <div class="leadsie-wrap" id="leadsieWrap">
+      <iframe
+        id="leadsieFrame"
+        title="Leadsie one-click Facebook access for AT Media Partners"
+        data-src="https://app.leadsie.com/embed/connect/at-media-partners/manage"
+        loading="lazy"
+        allow="popups; popups-to-escape-sandbox; clipboard-write"
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- Always-visible fallback: works even when the iframe is blocked -->
+    <div class="alert blue" id="leadsieFallback" style="margin-bottom:32px;">
+      <span class="alert-icon">🔗</span>
+      <div class="alert-text">
+        <strong>Box above not loading?</strong> Open the same connection page directly — no embed, no blocker issues.<br>
+        <a href="https://app.leadsie.com/connect/at-media-partners/manage" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:12px;">Open Leadsie in a new tab &rarr;</a>
+      </div>
     </div>
 
     <div style="display:flex; justify-content:space-between; margin-top:28px;">
-      <button class="btn btn-secondary" onclick="showTab('tab2', document.querySelectorAll('.tab-btn')[1])">&larr; Back</button>
+      <button type="button" class="btn btn-secondary" data-goto="tab2">&larr; Back</button>
       <a href="step-4.html" class="btn btn-primary">Access Given — Next Step &rarr;</a>
     </div>
   </div>
@@ -186,12 +217,147 @@
 </footer>
 
 <script>
-function showTab(id, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
+(function () {
+  var TAB_IDS = ['tab1', 'tab2', 'tab3'];
+
+  function hydrateIframe(panel) {
+    var iframes = panel.querySelectorAll('iframe[data-src]');
+    for (var i = 0; i < iframes.length; i++) {
+      var f = iframes[i];
+      f.src = f.getAttribute('data-src');
+      f.removeAttribute('data-src');
+    }
+  }
+
+  function showTab(id, opts) {
+    if (TAB_IDS.indexOf(id) === -1) id = 'tab1';
+    opts = opts || {};
+
+    TAB_IDS.forEach(function (tid) {
+      var panel = document.getElementById(tid);
+      var btn = document.getElementById('tabbtn-' + tid);
+      var isActive = tid === id;
+
+      if (panel) {
+        panel.classList.toggle('active', isActive);
+        if (isActive) panel.removeAttribute('hidden');
+        else panel.setAttribute('hidden', '');
+      }
+      if (btn) {
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.setAttribute('tabindex', isActive ? '0' : '-1');
+      }
+    });
+
+    var activePanel = document.getElementById(id);
+    if (activePanel) hydrateIframe(activePanel);
+
+    if (opts.updateHash !== false) {
+      var hash = '#' + id.replace('tab', 'part-');
+      if (location.hash !== hash) {
+        history.replaceState(null, '', hash);
+      }
+    }
+
+    if (opts.scroll !== false) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (opts.focus) {
+      var btn = document.getElementById('tabbtn-' + id);
+      if (btn) btn.focus();
+    }
+  }
+
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    if (h === 'part-1') return 'tab1';
+    if (h === 'part-2') return 'tab2';
+    if (h === 'part-3') return 'tab3';
+    return null;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Logo fallback (replaces inline onerror)
+    var img = document.getElementById('navLogoImg');
+    var fb = document.getElementById('navLogoFallback');
+    if (img && fb) {
+      img.addEventListener('error', function () {
+        img.style.display = 'none';
+        fb.style.display = 'inline';
+      });
+    }
+
+    // Tab button clicks
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showTab(btn.getAttribute('data-tab'));
+      });
+    });
+
+    // Next/Back buttons
+    document.querySelectorAll('[data-goto]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showTab(btn.getAttribute('data-goto'));
+      });
+    });
+
+    // Keyboard arrow navigation on tablist
+    document.querySelectorAll('.tab-btn').forEach(function (btn, idx, list) {
+      btn.addEventListener('keydown', function (e) {
+        var next = null;
+        if (e.key === 'ArrowRight') next = (idx + 1) % list.length;
+        else if (e.key === 'ArrowLeft') next = (idx - 1 + list.length) % list.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = list.length - 1;
+        if (next !== null) {
+          e.preventDefault();
+          showTab(list[next].getAttribute('data-tab'), { focus: true });
+        }
+      });
+    });
+
+    // Respond to hash changes (back/forward, shared links)
+    window.addEventListener('hashchange', function () {
+      var t = tabFromHash();
+      if (t) showTab(t, { updateHash: false, scroll: false });
+    });
+
+    // Initial state: hash wins, else default tab1 (already active)
+    var initial = tabFromHash();
+    if (initial) {
+      showTab(initial, { updateHash: false, scroll: false });
+    } else {
+      // Hydrate the default tab's iframe on load
+      hydrateIframe(document.getElementById('tab1'));
+    }
+
+    // Leadsie iframe health check — if it doesn't fire `load` within 6s,
+    // highlight the fallback so the client isn't stuck.
+    function watchLeadsie() {
+      var frame = document.getElementById('leadsieFrame');
+      var fallback = document.getElementById('leadsieFallback');
+      if (!frame || !fallback) return;
+      var loaded = false;
+      frame.addEventListener('load', function () { loaded = true; });
+      frame.addEventListener('error', function () {
+        fallback.classList.remove('blue');
+        fallback.classList.add('yellow');
+      });
+      setTimeout(function () {
+        // Only show emphasised fallback if the iframe never loaded AND
+        // tab3 has been opened (i.e. its src was hydrated).
+        var hydrated = !frame.hasAttribute('data-src');
+        if (hydrated && !loaded) {
+          fallback.classList.remove('blue');
+          fallback.classList.add('yellow');
+        }
+      }, 6000);
+    }
+    watchLeadsie();
+  });
+})();
 </script>
 
 </body>
