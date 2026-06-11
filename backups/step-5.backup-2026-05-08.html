@@ -288,49 +288,6 @@
       line-height: 1.5;
     }
 
-    /* ─── 5 CORE FORMAT STEPS ─── */
-    .format-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 24px 0 0;
-      padding: 0;
-      list-style: none;
-      counter-reset: fmt;
-    }
-    .format-steps li {
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      gap: 18px;
-      align-items: start;
-      background: white;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 22px;
-    }
-    .format-steps li::before {
-      counter-increment: fmt;
-      content: counter(fmt, decimal-leading-zero);
-      font-size: 20px;
-      font-weight: 900;
-      color: var(--blue);
-      letter-spacing: -0.5px;
-      line-height: 1.4;
-      font-feature-settings: "tnum";
-    }
-    .format-steps .fs-name {
-      font-size: 15.5px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.2px;
-    }
-    .format-steps .fs-desc {
-      font-size: 14px;
-      color: var(--mid);
-      line-height: 1.55;
-      margin-top: 3px;
-    }
-
     /* ─── BEFORE/AFTER TRANSFORM ROW ─── */
     .transform-row {
       display: grid;
@@ -345,7 +302,6 @@
       border: 1.5px solid var(--border);
       background: var(--bg-soft);
       position: relative;
-      aspect-ratio: 1 / 1;
     }
     .transform-side .ts-label {
       position: absolute;
@@ -457,32 +413,6 @@
       border-radius: 0;
       height: 100%;
       min-height: 0;
-    }
-    /* Uniform 4-up client examples — fixed box, no cropping */
-    .example-gallery.client-4 {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .example-card .ec-img.ec-uniform {
-      aspect-ratio: 3 / 4;
-      background: #fff;
-    }
-    .example-card .ec-img.ec-uniform img {
-      object-fit: contain;
-    }
-    .example-card .ec-img.ec-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .example-card .ec-img.ec-stack img {
-      height: calc(50% - 2px);
-      object-fit: cover;
-    }
-    @media (max-width: 900px) {
-      .example-gallery.client-4 { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 540px) {
-      .example-gallery.client-4 { grid-template-columns: 1fr; }
     }
     .example-card .ec-meta {
       padding: 14px 16px;
@@ -695,38 +625,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-    /* Wide horizontal reel (selfie / talking head) — landscape frame, whole clip centered over a soft blurred fill */
-    .vf-grid:has(.vf-reel-wide) {
-      grid-template-columns: 1.15fr 1fr;
-      align-items: stretch;
-    }
-    .vf-reel.vf-reel-wide {
-      aspect-ratio: auto;
-      max-height: none;
-      height: 100%;
-    }
-    .vf-reel.vf-reel-wide .vf-reel-bg {
-      display: block;
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: blur(28px) brightness(0.5);
-      transform: scale(1.2);
-      z-index: 0;
-    }
-    .vf-reel.vf-reel-wide .vf-reel-fg {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-    @media (max-width: 720px) {
-      .vf-grid:has(.vf-reel-wide) { grid-template-columns: 1fr; }
     }
     .vf-sound-btn {
       position: absolute;
@@ -1006,7 +904,7 @@
 
   <div class="creative-hero">
     <div class="step-badge">🎨 Step 5 of 6 — Creative Brief</div>
-    <h1 class="page-title">A Few Photos. A Few Clips. <span>We Handle The Rest.</span></h1>
+    <h1 class="page-title">A Few Photos. A Few Clips.<br><span>We Handle The Rest.</span></h1>
     <p class="page-subtitle">The creative drives <b>80% of your ad results</b> — and the less you have to worry about, the faster we launch. Send us simple raw material from your phone, we transform it into hyper-realistic AI ads and high-converting video, and you get more leads with less time spent on shoots.</p>
   </div>
 
@@ -1076,102 +974,6 @@
       <span class="alert-icon">📱</span>
       <div class="alert-text"><strong>Even casual selfies work.</strong> A photo from a holiday, a walk, a quick phone snap — anything with you in it gives us material to work with. The less polished, the more authentic. The less work for you, the better.</div>
     </div>
-
-    <!-- REAL EXAMPLES FROM CLIENTS -->
-    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:48px 0 8px;">Real Examples From Our Clients</h3>
-    <p style="color:var(--mid); margin-bottom:24px;">The kind of raw phone photos partners send us — exactly what we work from.</p>
-
-    <div class="example-gallery client-4">
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client-example-01-solo-uniform.png" alt="Client example — solo in uniform">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">01 Solo in uniform</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client-example-02-team-photo.png" alt="Client example — team photo">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">02 Team Photo</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client-example-03-on-the-job.png" alt="Client example — on the job">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">03 On the job</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform ec-stack">
-          <img src="assets/slides/client-example-04-before.jpeg" alt="Client example — before">
-          <img src="assets/slides/client-example-04-after.jpeg" alt="Client example — after">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">04 Before and After</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-gallery client-4" style="margin-top:16px;">
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client2-example-01-solo-uniform.jpeg" alt="Client example — solo in uniform">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">01 Solo in uniform</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client2-example-02-on-the-job.jpg" alt="Client example — on the job" style="object-fit:cover;">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">02 On the job</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform ec-stack">
-          <img src="assets/slides/client2-example-03-before.jpg" alt="Client example — before">
-          <img src="assets/slides/client2-example-03-after.jpg" alt="Client example — after">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">03 Before and After</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-gallery client-4" style="margin-top:16px;">
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client3-example-01-solo-uniform.jpeg" alt="Client example — solo in uniform">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">01 Solo in uniform</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform">
-          <img src="assets/slides/client3-example-02-on-the-job.png" alt="Client example — on the job" style="object-fit:cover;">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">02 On the Job</div>
-        </div>
-      </div>
-      <div class="example-card">
-        <div class="ec-img ec-uniform ec-stack">
-          <img src="assets/slides/client3-example-03-before.jpeg" alt="Client example — before" style="object-position:center 62%;">
-          <img src="assets/slides/client3-example-03-after.jpeg" alt="Client example — after">
-        </div>
-        <div class="ec-meta">
-          <div class="ec-label">03 Before and After</div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════ -->
@@ -1189,12 +991,16 @@
     <div class="transform-row">
       <div class="transform-side from">
         <span class="ts-label">Your raw photo</span>
-        <img src="assets/slides/baden-raw.jpg" alt="Raw client photo" style="object-position: center top;">
+        <div class="ph tall" style="border-radius:0; border:none; min-height:320px; height:100%;">
+          <span class="ph-icon">📸</span>
+          <span class="ph-title">Raw client photo</span>
+          <span class="ph-sub">Drop a real "before" phone photo here</span>
+        </div>
       </div>
       <div class="transform-arrow">→</div>
       <div class="transform-side to">
         <span class="ts-label">AI ad output</span>
-        <img src="assets/slides/baden-ai-ad.png" alt="AI ad creative output" style="object-position: center center;">
+        <img src="assets/slides/v1_original_style.png" alt="AI ad creative output">
       </div>
     </div>
 
@@ -1204,8 +1010,12 @@
 
     <div class="example-gallery">
       <div class="example-card">
-        <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-          <img src="assets/slides/jjt-building-live-ad.png" alt="Live JJT Building Facebook ad" style="height:auto; object-fit:contain;">
+        <div class="ec-img">
+          <div class="ph">
+            <span class="ph-icon">📱</span>
+            <span class="ph-title">Live Facebook ad</span>
+            <span class="ph-sub">Drop a real ad screenshot here</span>
+          </div>
         </div>
         <div class="ec-meta">
           <div class="ec-label">Live Facebook Ad</div>
@@ -1213,8 +1023,12 @@
         </div>
       </div>
       <div class="example-card">
-        <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-          <img src="assets/slides/jjt-building-live-ad-2.png" alt="Live JJT Building Facebook ad — backyard upgrade" style="height:auto; object-fit:contain;">
+        <div class="ec-img">
+          <div class="ph">
+            <span class="ph-icon">🖼️</span>
+            <span class="ph-title">Placeholder</span>
+            <span class="ph-sub">AI ad variation — different colour scheme</span>
+          </div>
         </div>
         <div class="ec-meta">
           <div class="ec-label">Variation B</div>
@@ -1222,8 +1036,12 @@
         </div>
       </div>
       <div class="example-card">
-        <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-          <img src="assets/slides/jjt-building-live-ad-3.png?v=2" alt="Live JJT Building Facebook ad — meet Josh" style="height:auto; object-fit:contain;">
+        <div class="ec-img">
+          <div class="ph">
+            <span class="ph-icon">🖼️</span>
+            <span class="ph-title">Placeholder</span>
+            <span class="ph-sub">AI ad variation — alternate hook</span>
+          </div>
         </div>
         <div class="ec-meta">
           <div class="ec-label">Variation C</div>
@@ -1278,70 +1096,13 @@
       <div class="bb-text">Our highest-performing campaigns all share one thing: <b>vertical phone video from the owner.</b> Homeowners want to see who they're hiring before they enquire. The campaigns that skip this step take 3× longer to find their winning creative.</div>
     </div>
 
-    <!-- RECORDING GUIDE -->
-    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:48px 0 8px;">Complete Guide to Recording High-Converting Video Ads</h3>
-    <p style="color:var(--mid); margin-bottom:24px; max-width:760px;">To get the best possible results from your video campaigns, we utilise five core video formats. Recording these is straightforward, and you do not need a professional camera crew. Simply follow the framework below to nail your setup and delivery.</p>
-
-    <h4 style="font-size:19px; font-weight:900; color:var(--navy); letter-spacing:-0.3px; margin:0 0 4px;">The 5 Core Video Formats to Record</h4>
-    <ol class="format-steps">
-      <li>
-        <div>
-          <div class="fs-name">Selfie / Talking Head</div>
-          <div class="fs-desc">Hold your phone at eye level and speak directly to the lens. Keep it casual and authentic to build a personal connection with the viewer.</div>
-        </div>
-      </li>
-      <li>
-        <div>
-          <div class="fs-name">Project Showcase</div>
-          <div class="fs-desc">Film a horizontal walkthrough of a finished job site. Walk the viewer through the project, highlighting your craftsmanship and pointing out specific details.</div>
-        </div>
-      </li>
-      <li>
-        <div>
-          <div class="fs-name">Testimonials</div>
-          <div class="fs-desc">Hand the phone to a happy client on-site or set it up on a tripod. Have them share their genuine experience working with your team.</div>
-        </div>
-      </li>
-      <li>
-        <div>
-          <div class="fs-name">Transformations</div>
-          <div class="fs-desc">Capture the dramatic visual shift. Film the messy or outdated "before" state of a job site, and then film the final, pristine "after" result from the exact same angle.</div>
-        </div>
-      </li>
-      <li>
-        <div>
-          <div class="fs-name">Educational Videos</div>
-          <div class="fs-desc">Stand in front of a clean background or an active job site and share helpful tips, trade secrets, or industry advice to position yourself as the trusted local expert.</div>
-        </div>
-      </li>
-    </ol>
-
-    <div class="alert blue" style="margin-top:16px;">
-      <span class="alert-icon">📐</span>
-      <div class="alert-text"><strong>Formatting note:</strong> Always record your videos in a wide, horizontal format. Avoid tight, squished vertical videos so we can maximise the layout and visual impact of your ads.</div>
-    </div>
-
-    <h4 style="font-size:19px; font-weight:900; color:var(--navy); letter-spacing:-0.3px; margin:36px 0 4px;">Script Delivery and Recording Requirements</h4>
-    <div class="photo-types" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="photo-type">
-        <div class="pt-num">01</div>
-        <div class="pt-name">We Handle the Scripting</div>
-        <div class="pt-desc">Do not worry about what to say. Our team will generate and provide the exact script for your video ads.</div>
-      </div>
-      <div class="photo-type">
-        <div class="pt-num">02</div>
-        <div class="pt-name">Use a Teleprompter App</div>
-        <div class="pt-desc">To make recording effortless, download a teleprompter app on your smartphone. Copy and paste our script straight into the app so you can read your lines smoothly while looking directly at the camera lens.</div>
-      </div>
-    </div>
-
     <!-- THE TWO NON-NEGOTIABLES -->
-    <div class="non-neg" style="margin-top:32px;">
+    <div class="non-neg">
       <div class="nn-mark">!</div>
       <div>
-        <div class="nn-eyebrow">Crucial requirements</div>
+        <div class="nn-eyebrow">The two things we can't fake in post</div>
         <h3>Eye contact &amp; enthusiasm.</h3>
-        <p style="color:#78350f; line-height:1.6;">While our production team can edit your footage, we <b>cannot edit or cut out poor delivery.</b> You must maintain direct eye contact with the camera lens throughout the video. Bring high energy and genuine enthusiasm — if the video lacks passion or you're constantly looking away from the camera, the ad won't perform.</p>
+        <p style="color:#78350f; line-height:1.6;">We can edit, cut, colour-grade, add captions, swap music, add effects. We can't fix a video where you're looking at the floor or sound like you'd rather be anywhere else. Look down the lens. Sound like you actually like your job.</p>
         <div class="nn-things">
           <div class="nn-thing"><b>👁️ Eye contact</b><span>Look directly at the lens. Not the screen, not the floor.</span></div>
           <div class="nn-thing"><b>🔥 Enthusiasm</b><span>Energy in your voice. Smile. You're talking to a customer.</span></div>
@@ -1372,9 +1133,8 @@
         </button>
         <div class="vf-body">
           <div class="vf-grid">
-            <div class="vf-reel vf-reel-wide">
-              <video class="vf-reel-fg" src="assets/videos/selfie.mp4" autoplay muted loop playsinline></video>
-              <video class="vf-reel-bg" src="assets/videos/selfie.mp4" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video>
+            <div class="vf-reel">
+              <video src="assets/videos/selfie.mp4" autoplay muted loop playsinline></video>
               <button class="vf-sound-btn" onclick="toggleSound(this)" type="button" aria-label="Toggle sound">
                 <svg class="icon-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
                 <svg class="icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
@@ -1422,13 +1182,8 @@
         </button>
         <div class="vf-body">
           <div class="vf-grid">
-            <div class="vf-reel vf-reel-wide">
-              <video class="vf-reel-fg" src="assets/videos/project-showcase.mp4" autoplay muted loop playsinline></video>
-              <video class="vf-reel-bg" src="assets/videos/project-showcase.mp4" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video>
-              <button class="vf-sound-btn" onclick="toggleSound(this)" type="button" aria-label="Toggle sound">
-                <svg class="icon-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
-                <svg class="icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-              </button>
+            <div class="vf-reel" style="aspect-ratio:auto; max-height:none;">
+              <img src="assets/slides/005.webp" alt="Onsite project walkthrough examples" style="object-fit:contain; background:#f1f5f9;">
             </div>
             <div class="vf-detail">
               <div class="vf-why-block">
@@ -1472,13 +1227,8 @@
         </button>
         <div class="vf-body">
           <div class="vf-grid">
-            <div class="vf-reel vf-reel-wide">
-              <video class="vf-reel-fg" src="assets/videos/testimonial.mp4" autoplay muted loop playsinline></video>
-              <video class="vf-reel-bg" src="assets/videos/testimonial.mp4" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video>
-              <button class="vf-sound-btn" onclick="toggleSound(this)" type="button" aria-label="Toggle sound">
-                <svg class="icon-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
-                <svg class="icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-              </button>
+            <div class="vf-reel" style="aspect-ratio:auto; max-height:none;">
+              <img src="assets/slides/004.webp" alt="Team and client testimonial style examples" style="object-fit:contain; background:#f1f5f9;">
             </div>
             <div class="vf-detail">
               <div class="vf-why-block">
@@ -1522,9 +1272,8 @@
         </button>
         <div class="vf-body">
           <div class="vf-grid">
-            <div class="vf-reel vf-reel-wide">
-              <video class="vf-reel-fg" src="assets/videos/transformation.mp4" autoplay muted loop playsinline></video>
-              <video class="vf-reel-bg" src="assets/videos/transformation.mp4" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video>
+            <div class="vf-reel">
+              <video src="assets/videos/transformation.mp4" autoplay muted loop playsinline></video>
               <button class="vf-sound-btn" onclick="toggleSound(this)" type="button" aria-label="Toggle sound">
                 <svg class="icon-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
                 <svg class="icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
@@ -1572,13 +1321,8 @@
         </button>
         <div class="vf-body">
           <div class="vf-grid">
-            <div class="vf-reel vf-reel-wide">
-              <video class="vf-reel-fg" src="assets/videos/educational.mp4" autoplay muted loop playsinline></video>
-              <video class="vf-reel-bg" src="assets/videos/educational.mp4" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video>
-              <button class="vf-sound-btn" onclick="toggleSound(this)" type="button" aria-label="Toggle sound">
-                <svg class="icon-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
-                <svg class="icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-              </button>
+            <div class="vf-reel" style="aspect-ratio:auto; max-height:none;">
+              <img src="assets/slides/005.webp" alt="On-site expert education examples" style="object-fit:contain; background:#f1f5f9;">
             </div>
             <div class="vf-detail">
               <div class="vf-why-block">

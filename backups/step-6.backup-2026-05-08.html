@@ -6,7 +6,7 @@
   <title>Step 6: Sales Training | ATMP Onboarding</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-wrap { max-width: 900px; }
+    .page-wrap { max-width: 1100px; }
     :root {
       --navy: #0f172a;
       --blue: #2563EB;
@@ -21,7 +21,7 @@
     .training-hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%);
       color: white;
-      padding: 60px 56px 56px;
+      padding: 56px 56px 48px;
       margin: -80px -56px 48px;
       border-radius: 0 0 32px 32px;
       position: relative;
@@ -42,22 +42,21 @@
       backdrop-filter: blur(8px);
     }
     .training-hero h1 {
-      color: white;
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 900;
-      letter-spacing: -2px;
-      margin: 14px 0 24px;
+      letter-spacing: -1.8px;
+      margin: 14px 0 18px;
+      max-width: none;
       line-height: 1.04;
     }
     .training-hero h1 span { color: #60a5fa; }
     .training-hero .lede {
-      font-size: 21px;
+      font-size: 20px;
       color: #cbd5e1;
+      max-width: none;
       line-height: 1.65;
-      max-width: 720px;
       margin: 0;
     }
-    .training-hero .lede b { color: white; font-weight: 700; }
 
     /* ─── COURSE HEADER ROW ─── */
     .course-header {
@@ -530,9 +529,8 @@
     .mvp-note strong { font-weight: 800; }
 
     @media (max-width: 920px) {
-      .training-hero { padding: 60px 32px 56px; margin: -80px -32px 48px; }
-      .training-hero h1 { font-size: 44px; }
-      .training-hero .lede { font-size: 17px; }
+      .training-hero { padding: 40px 24px 36px; margin: -80px -24px 32px; }
+      .training-hero h1 { font-size: 34px; }
       .module-head { grid-template-columns: 44px 1fr auto; gap: 12px; padding: 18px; }
       .module-meta, .module-delete { display: none; }
       .module-body { padding: 0 18px 22px; }
