@@ -77,7 +77,7 @@
       margin: 0;
     }
     .add-module-btn {
-      display: none;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
       background: white;
@@ -96,10 +96,6 @@
       border-color: var(--blue);
       border-style: solid;
     }
-    /* admin-only controls — hidden unless ?admin=1 */
-    body.admin-mode .add-module-btn { display: inline-flex; }
-    .admin-only { display: none; }
-    body.admin-mode .admin-only { display: flex; }
     .add-module-btn .plus {
       width: 20px; height: 20px;
       border-radius: 50%;
@@ -306,47 +302,6 @@
     .module-video .ph-icon { font-size: 36px; }
     .module-video .ph-title { font-size: 14px; font-weight: 700; color: #cbd5e1; }
     .module-video .ph-sub { font-size: 12px; color: #64748b; max-width: 280px; line-height: 1.5; }
-
-    /* ─── VIDEO PLAYER: toggle + expand ─── */
-    .video-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .vtoggle { display: inline-flex; background: #f1f5f9; padding: 5px; border-radius: 11px; gap: 5px; }
-    .vtoggle-btn {
-      border: none; background: transparent; font-family: inherit; font-weight: 800; font-size: 13px;
-      color: var(--mid); padding: 9px 16px; border-radius: 8px; cursor: pointer;
-      display: flex; align-items: center; gap: 6px; transition: all 0.15s;
-    }
-    .vtoggle-btn.on { background: white; color: var(--navy); box-shadow: 0 2px 8px rgba(15,23,42,0.1); }
-    .video-single-label { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .vexpand {
-      margin-left: auto; display: inline-flex; align-items: center; gap: 8px;
-      border: 1.5px solid var(--border); background: white; color: var(--navy);
-      font-family: inherit; font-weight: 800; font-size: 13px; padding: 9px 16px;
-      border-radius: 10px; cursor: pointer; transition: all 0.15s;
-    }
-    .vexpand:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
-    .module-video.portrait { aspect-ratio: auto; height: 520px; }
-    .module-video.portrait iframe { width: auto; aspect-ratio: 9 / 16; height: 100%; margin: 0 auto; }
-    @media (max-width: 720px) {
-      .module-video.portrait { height: auto; aspect-ratio: 9 / 16; max-width: 300px; margin: 0 auto; }
-    }
-    /* expand lightbox */
-    .vid-lb {
-      position: fixed; inset: 0; background: rgba(15,23,42,0.85); backdrop-filter: blur(4px);
-      display: none; align-items: center; justify-content: center; padding: 30px; z-index: 100;
-    }
-    .vid-lb.open { display: flex; }
-    .vid-lb-inner { background: #0f172a; border-radius: 18px; overflow: hidden; width: min(1000px, 100%); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .vid-lb-inner.portrait { width: auto; }
-    .vid-lb-bar { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: white; }
-    .vid-lb-bar .lb-q { font-size: 15px; font-weight: 800; }
-    .vid-lb-close {
-      margin-left: auto; width: 34px; height: 34px; border-radius: 9px;
-      background: rgba(255,255,255,0.14); color: white; border: none; cursor: pointer;
-      font-size: 17px; display: flex; align-items: center; justify-content: center;
-    }
-    .vid-lb-close:hover { background: rgba(255,255,255,0.26); }
-    .vid-lb-media iframe { width: 100%; aspect-ratio: 16 / 9; display: block; border: 0; background: #000; }
-    .vid-lb-inner.portrait .vid-lb-media iframe { width: auto; height: 78vh; aspect-ratio: 9 / 16; }
 
     @media (max-width: 720px) {
       .video-pair { grid-template-columns: 1fr; }
@@ -576,176 +531,11 @@
 
     @media (max-width: 920px) {
       .training-hero { padding: 60px 32px 56px; margin: -80px -32px 48px; }
-      .training-hero h1 { font-size: 44px; }      .training-hero .lede { font-size: 17px; }
+      .training-hero h1 { font-size: 44px; }
+      .training-hero .lede { font-size: 17px; }
       .module-head { grid-template-columns: 44px 1fr auto; gap: 12px; padding: 18px; }
       .module-meta, .module-delete { display: none; }
       .module-body { padding: 0 18px 22px; }
-    }
-
-    /* ─── FAQ BLOCK ─── */
-    .faq-section { margin-top: 64px; }
-    .faq-section .faq-eyebrow {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .faq-section .faq-title {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -0.6px;
-      color: var(--navy);
-      margin-bottom: 22px;
-    }
-    .faq-card {
-      background: white;
-      border: 1.5px solid var(--border);
-      border-radius: 22px;
-      padding: 28px 30px 24px;
-      box-shadow: 0 10px 34px rgba(15,23,42,0.06);
-    }
-    .faq-tabs {
-      display: flex;
-      gap: 8px;
-      background: #f1f5f9;
-      padding: 6px;
-      border-radius: 14px;
-      margin-bottom: 24px;
-    }
-    .faq-tab {
-      flex: 1;
-      text-align: center;
-      padding: 12px 10px;
-      border-radius: 10px;
-      font-weight: 800;
-      font-size: 14px;
-      color: var(--mid);
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      font-family: inherit;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.15s ease;
-    }
-    .faq-tab .faq-ti { font-size: 18px; }
-    .faq-tab .faq-tc { font-size: 11px; font-weight: 700; color: var(--muted); }
-    .faq-tab:hover { transform: translateY(-2px); }
-    .faq-tab.on { background: white; color: var(--navy); box-shadow: 0 3px 10px rgba(15,23,42,0.08); }
-    .faq-tab.on .faq-tc { color: var(--blue); }
-    .faq-pane { display: none; }
-    .faq-pane.on { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-    /* video FAQ cards */
-    .vfaq {
-      background: white;
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      text-align: left;
-      padding: 0;
-      font-family: inherit;
-      transition: transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .vfaq:hover { transform: translateY(-4px); border-color: #bfdbfe; box-shadow: 0 14px 32px rgba(37,99,235,0.12); }
-    .vfaq-thumb {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      overflow: hidden;
-    }
-    .vfaq-thumb video, .vfaq-thumb img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    .vfaq-play {
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.95);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      transition: transform 0.18s ease, background 0.18s ease;
-    }
-    .vfaq:hover .vfaq-play { transform: scale(1.08); background: white; }
-    .vfaq-play svg { width: 22px; height: 22px; fill: var(--blue); margin-left: 3px; }
-    .vfaq-dur {
-      position: absolute;
-      bottom: 10px; right: 10px;
-      background: rgba(15,23,42,0.82);
-      color: white;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.02em;
-      padding: 3px 8px;
-      border-radius: 6px;
-    }
-    .vfaq-soon {
-      position: absolute;
-      top: 10px; left: 10px;
-      background: rgba(255,255,255,0.16);
-      color: white;
-      font-size: 10px; font-weight: 800;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 4px 9px;
-      border-radius: 100px;
-    }
-    .vfaq-meta { padding: 15px 17px 17px; }
-    .vfaq-q { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.35; }
-    .vfaq-sub { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
-
-    /* lightbox player */
-    .vfaq-modal {
-      position: fixed; inset: 0;
-      background: rgba(15,23,42,0.82);
-      backdrop-filter: blur(4px);
-      display: none;
-      align-items: center; justify-content: center;
-      z-index: 1000;
-      padding: 24px;
-    }
-    .vfaq-modal.on { display: flex; }
-    .vfaq-modal-inner {
-      background: #0f172a;
-      border-radius: 18px;
-      overflow: hidden;
-      width: min(880px, 100%);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-    }
-    .vfaq-modal video {
-      width: 100%; aspect-ratio: 16 / 9; display: block; background: #000;
-    }
-    .vfaq-modal-empty {
-      aspect-ratio: 16 / 9;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 12px; color: #cbd5e1; text-align: center; padding: 30px;
-    }
-    .vfaq-modal-empty .em-ic { font-size: 40px; }
-    .vfaq-modal-empty .em-t { font-size: 18px; font-weight: 800; color: white; }
-    .vfaq-modal-empty .em-s { font-size: 14px; color: #94a3b8; max-width: 360px; line-height: 1.5; }
-    .vfaq-modal-bar {
-      display: flex; align-items: center; gap: 12px;
-      padding: 16px 20px; color: white;
-    }
-    .vfaq-modal-bar .mb-q { font-size: 15px; font-weight: 700; }
-    .vfaq-modal-close {
-      margin-left: auto;
-      width: 34px; height: 34px; border-radius: 9px;
-      background: rgba(255,255,255,0.12); color: white;
-      border: none; cursor: pointer; font-size: 18px;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.15s ease;
-    }
-    .vfaq-modal-close:hover { background: rgba(255,255,255,0.24); }
-
-    @media (max-width: 640px) {
-      .faq-tab { font-size: 12px; }
-      .faq-pane.on { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -785,14 +575,14 @@
     <p class="lede">Six short modules covering the fundamentals — how to use the system, work the pipeline, handle messages, run automations, and close more deals. Watch in any order. Add new modules as we build them out.</p>
   </div>
 
-  <div class="alert yellow admin-only">
-    <span class="alert-icon">💡</span>
-    <div class="alert-text"><strong>This is your starter library.</strong> We'll add more modules over time — anytime there's a new training video, just hit <strong>+ Add Module</strong> and drop in the Loom link.</div>
+  <div class="mvp-note">
+    <span class="mvp-note-icon">💡</span>
+    <p><strong>This is your starter library.</strong> We'll add more modules over time — anytime there's a new training video, just hit <strong>+ Add Module</strong> and drop in the Loom link.</p>
   </div>
 
   <!-- COURSE -->
   <div class="course-header">
-    <h2 id="course-title">Core Training</h2>
+    <h2>Core Training — 6 Modules</h2>
     <button class="add-module-btn" onclick="openAddForm()" type="button">
       <span class="plus">+</span> Add Module
     </button>
@@ -830,17 +620,6 @@
   <div class="bottom-nav">
     <a href="step-5.html" class="btn btn-secondary">&larr; Back to Step 5</a>
     <a href="index.html" class="btn btn-green">✅ All Done — View Overview</a>
-  </div>
-</div>
-
-<!-- video expand lightbox -->
-<div class="vid-lb" id="vidLb" onclick="if(event.target===this)closeExpand()">
-  <div class="vid-lb-inner">
-    <div class="vid-lb-bar">
-      <span class="lb-q"></span>
-      <button class="vid-lb-close" onclick="closeExpand()" type="button" aria-label="Close">✕</button>
-    </div>
-    <div class="vid-lb-media"></div>
   </div>
 </div>
 
@@ -999,26 +778,29 @@
           <div class="module-overview-eyebrow">What this covers</div>
           <p>${escapeHtml(m.desc)}</p>
         </div>
-        <div class="video-block">
-          ${(m.loomMobile || m.loomDesktop) ? `
-          <div class="video-bar">
-            ${(m.loomMobile && m.loomDesktop) ? `
-            <div class="vtoggle">
-              <button class="vtoggle-btn ${m.loomDesktop ? '' : 'on'}" onclick="switchVideo('${m.id}','mob',this)" type="button">📱 Mobile</button>
-              <button class="vtoggle-btn ${m.loomDesktop ? 'on' : ''}" onclick="switchVideo('${m.id}','desk',this)" type="button">🖥️ Desktop</button>
-            </div>` : `<div class="video-single-label">${m.loomDesktop ? '🖥️ Desktop walkthrough' : '📱 Mobile walkthrough'}</div>`}
-            <button class="vexpand" onclick="expandVideo('${m.id}')" type="button">⛶ Expand</button>
+        <div class="video-pair">
+          <div class="video-slot">
+            <div class="video-slot-label">📱 Mobile walkthrough</div>
+            <div class="module-video">
+              ${m.loomMobile
+                ? `<iframe src="${escapeAttr(m.loomMobile)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+                : `<div class="ph-icon">📱</div>
+                   <div class="ph-title">Mobile Loom coming soon</div>
+                   <div class="ph-sub">Drop the mobile Loom embed URL here.</div>`
+              }
+            </div>
           </div>
-          <div class="module-video ${m.loomDesktop ? '' : 'portrait'}" data-mob="${escapeAttr(m.loomMobile || '')}" data-desk="${escapeAttr(m.loomDesktop || '')}" data-title="${escapeAttr('Module ' + num + ' · ' + m.title)}">
-            <iframe src="${escapeAttr(m.loomDesktop || m.loomMobile)}" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div class="video-slot">
+            <div class="video-slot-label">🖥️ Desktop walkthrough</div>
+            <div class="module-video">
+              ${m.loomDesktop
+                ? `<iframe src="${escapeAttr(m.loomDesktop)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+                : `<div class="ph-icon">🖥️</div>
+                   <div class="ph-title">Desktop Loom coming soon</div>
+                   <div class="ph-sub">Drop the desktop Loom embed URL here.</div>`
+              }
+            </div>
           </div>
-          ` : `
-          <div class="module-video">
-            <div class="ph-icon">🎬</div>
-            <div class="ph-title">Walkthrough coming soon</div>
-            <div class="ph-sub">The video for this module will appear here once it's added.</div>
-          </div>
-          `}
         </div>
         ${m.chapters && m.chapters.length ? `
         <div class="chapters">
@@ -1050,10 +832,7 @@
   }
 
   function updateCount() {
-    var titleEl = document.getElementById('course-title');
-    if (!titleEl) return;
-    var n = allModules().length;
-    titleEl.textContent = 'Core Training — ' + n + ' Module' + (n === 1 ? '' : 's');
+    // (currently nothing displays a live count, but kept here for future use)
   }
 
   // ─── INTERACTIONS ──────────────────────────────────────────
@@ -1153,50 +932,6 @@
   function escapeAttr(str) {
     return String(str).replace(/"/g, '&quot;');
   }
-
-  // ─── VIDEO: toggle mobile/desktop + expand ──────────────────
-  function switchVideo(mid, mode, btn) {
-    var card = document.querySelector('.module[data-module="' + mid + '"]');
-    if (!card) return;
-    var stage = card.querySelector('.module-video');
-    var iframe = stage.querySelector('iframe');
-    var src = mode === 'mob' ? stage.dataset.mob : stage.dataset.desk;
-    if (src && iframe) iframe.src = src;
-    stage.classList.toggle('portrait', mode === 'mob');
-    card.querySelectorAll('.vtoggle-btn').forEach(function(b) { b.classList.remove('on'); });
-    btn.classList.add('on');
-  }
-  function expandVideo(mid) {
-    var card = document.querySelector('.module[data-module="' + mid + '"]');
-    if (!card) return;
-    var stage = card.querySelector('.module-video');
-    var iframe = stage.querySelector('iframe');
-    if (!iframe) return;
-    var portrait = stage.classList.contains('portrait');
-    var lb = document.getElementById('vidLb');
-    lb.querySelector('.lb-q').textContent = stage.dataset.title || '';
-    lb.querySelector('.vid-lb-inner').classList.toggle('portrait', portrait);
-    lb.querySelector('.vid-lb-media').innerHTML = '<iframe src="' + iframe.src + '" allow="autoplay; fullscreen" allowfullscreen></iframe>';
-    lb.classList.add('open');
-  }
-  function closeExpand() {
-    var lb = document.getElementById('vidLb');
-    lb.classList.remove('open');
-    lb.querySelector('.vid-lb-media').innerHTML = '';
-  }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeExpand();
-  });
-
-  // ─── ADMIN MODE (reveals Add Module controls) ───────────────
-  (function() {
-    try {
-      var p = new URLSearchParams(location.search);
-      if (p.get('admin') === '1') localStorage.setItem('atmp-admin', '1');
-      if (p.get('admin') === '0') localStorage.removeItem('atmp-admin');
-      if (localStorage.getItem('atmp-admin') === '1') document.body.classList.add('admin-mode');
-    } catch (e) {}
-  })();
 
   // ─── INIT ──────────────────────────────────────────────────
   render();

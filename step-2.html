@@ -5,6 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Step 2: Join WhatsApp | ATMP Onboarding</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ─── FAQ BLOCK ─── */
+    .faq-section { margin-top: 64px; }
+    .faq-section .faq-eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .faq-section .faq-title {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+    .faq-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 30px 24px;
+      box-shadow: 0 10px 34px rgba(15,23,42,0.06);
+    }
+    .faq-tabs {
+      display: flex;
+      gap: 8px;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+    }
+    .faq-tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px 10px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--mid);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.15s ease;
+    }
+    .faq-tab .faq-ti { font-size: 18px; }
+    .faq-tab .faq-tc { font-size: 11px; font-weight: 700; color: var(--muted); }
+    .faq-tab:hover { transform: translateY(-2px); }
+    .faq-tab.on { background: white; color: var(--navy); box-shadow: 0 3px 10px rgba(15,23,42,0.08); }
+    .faq-tab.on .faq-tc { color: var(--blue); }
+    .faq-pane { display: none; }
+    .faq-pane.on { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* video FAQ cards */
+    .vfaq {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: left;
+      padding: 0;
+      font-family: inherit;
+      transition: transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .vfaq:hover { transform: translateY(-4px); border-color: #bfdbfe; box-shadow: 0 14px 32px rgba(37,99,235,0.12); }
+    .vfaq-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      overflow: hidden;
+    }
+    .vfaq-thumb video, .vfaq-thumb img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .vfaq-play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .vfaq:hover .vfaq-play { transform: scale(1.08); background: white; }
+    .vfaq-play svg { width: 22px; height: 22px; fill: var(--blue); margin-left: 3px; }
+    .vfaq-dur {
+      position: absolute;
+      bottom: 10px; right: 10px;
+      background: rgba(15,23,42,0.82);
+      color: white;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .vfaq-soon {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: rgba(255,255,255,0.16);
+      color: white;
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 100px;
+    }
+    .vfaq-meta { padding: 15px 17px 17px; }
+    .vfaq-q { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.35; }
+    .vfaq-sub { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+
+    /* lightbox player */
+    .vfaq-modal {
+      position: fixed; inset: 0;
+      background: rgba(15,23,42,0.82);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 1000;
+      padding: 24px;
+    }
+    .vfaq-modal.on { display: flex; }
+    .vfaq-modal-inner {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      width: min(760px, 100%);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    }
+    .vfaq-modal-head {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .vfaq-modal-head .mh-q { font-size: 16px; font-weight: 800; color: var(--navy); letter-spacing: -0.2px; }
+    .vfaq-modal-close {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 9px;
+      background: #f1f5f9; color: var(--mid);
+      border: none; cursor: pointer; font-size: 17px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s ease;
+      flex-shrink: 0;
+    }
+    .vfaq-modal-close:hover { background: #e2e8f0; }
+    .vfaq-modal-scroll { overflow-y: auto; }
+    .vfaq-modal-scroll iframe,
+    .vfaq-modal-scroll video {
+      width: 100%; aspect-ratio: 16 / 9; display: block; background: #000; border: 0;
+    }
+    .vfaq-answer { padding: 22px 24px 26px; }
+    .vfaq-answer p { font-size: 15px; line-height: 1.65; color: var(--mid); margin-bottom: 14px; }
+    .vfaq-answer p:last-child { margin-bottom: 0; }
+    .ans-nut {
+      margin-top: 20px;
+      background: var(--bg-soft);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .ans-nut .nut-label {
+      font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 12px;
+    }
+    .ans-nut ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .ans-nut li {
+      font-size: 14.5px; line-height: 1.5; color: var(--navy); font-weight: 500;
+      display: flex; gap: 11px; align-items: flex-start;
+    }
+    .ans-nut li::before {
+      content: ""; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--blue); margin-top: 7px; flex-shrink: 0;
+    }
+    .ans-script {
+      margin-top: 16px;
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .ans-script .scr-label {
+      font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 8px;
+    }
+    .ans-script p { font-size: 15px; font-style: italic; color: var(--navy); margin: 0; line-height: 1.55; }
+
+    @media (max-width: 640px) {
+      .faq-tab { font-size: 12px; }
+      .faq-pane.on { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -69,6 +271,170 @@
     </ul>
   </div>
 
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-eyebrow">Help centre · Watch &amp; learn</div>
+    <h2 class="faq-title">Frequently asked questions</h2>
+    <p style="font-size:15px; color:var(--mid); margin:-12px 0 22px; max-width:640px; line-height:1.6;">Quick video answers to the questions we get most. Pick a topic, tap a card, and watch — one link, everything in one place.</p>
+    <div class="faq-card">
+      <div class="faq-tabs">
+        <button class="faq-tab on" type="button" data-pane="faq-ghl"><span class="faq-ti">🖥️</span>GHL<span class="faq-tc">2 videos</span></button>
+        <button class="faq-tab" type="button" data-pane="faq-qual"><span class="faq-ti">🎯</span>Qualifying<span class="faq-tc">3 videos</span></button>
+        <button class="faq-tab" type="button" data-pane="faq-sales"><span class="faq-ti">🤝</span>Sales<span class="faq-tc">1 video</span></button>
+      </div>
+
+      <div class="faq-pane on" id="faq-ghl">
+        <button class="vfaq" type="button" onclick="openVid(this)" data-loom="1681b30c99ab40ac9c0a6a7bd59fce88" data-answer="ans-calendar" data-q="Setting up your calendar">
+          <div class="vfaq-thumb"><span class="vfaq-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <div class="vfaq-meta"><div class="vfaq-q">Setting up your calendar</div><div class="vfaq-sub">Create &amp; sync your GHL calendar</div></div>
+        </button>
+        <button class="vfaq" type="button" onclick="openVid(this)" data-loom="7df1cc1106be49539d93a01d8f91b73e" data-answer="ans-unresponsive" data-q="Unresponsive Automation">
+          <div class="vfaq-thumb"><span class="vfaq-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <div class="vfaq-meta"><div class="vfaq-q">Unresponsive Automation</div><div class="vfaq-sub">Auto follow-up for quiet leads</div></div>
+        </button>
+      </div>
+
+      <div class="faq-pane" id="faq-qual">
+        <button class="vfaq" type="button" onclick="openVid(this)" data-loom="dc523ac267754db59efabd2c72a5a839" data-answer="ans-zeroleads" data-q="Zero leads today">
+          <div class="vfaq-thumb"><span class="vfaq-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <div class="vfaq-meta"><div class="vfaq-q">Zero leads today</div><div class="vfaq-sub">Why some days are quiet — and that's normal</div></div>
+        </button>
+        <button class="vfaq" type="button" onclick="openVid(this)" data-loom="c5fced9175274fae8b8f80895bf832f3" data-answer="ans-location" data-q="Out of location leads">
+          <div class="vfaq-thumb"><span class="vfaq-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <div class="vfaq-meta"><div class="vfaq-q">Out of location leads</div><div class="vfaq-sub">Why a few fall outside your area</div></div>
+        </button>
+        <button class="vfaq" type="button" onclick="openVid(this)" data-loom="9c3a949b416343f2a20b808883ef11a7" data-answer="ans-budget" data-q="Spending more than the budget?">
+          <div class="vfaq-thumb"><span class="vfaq-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <div class="vfaq-meta"><div class="vfaq-q">Spending more than the budget?</div><div class="vfaq-sub">Why daily spend goes up and down</div></div>
+        </button>
+      </div>
+
+      <div class="faq-pane" id="faq-sales">
+        <button class="vfaq" type="button" onclick="openVid(this)" data-loom="55939ddd601c43c888d468b3669f2f62" data-answer="ans-free" data-q="People asking for free things">
+          <div class="vfaq-thumb"><span class="vfaq-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <div class="vfaq-meta"><div class="vfaq-q">People asking for free things</div><div class="vfaq-sub">Handling "is it really free?"</div></div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- hidden FAQ answer content -->
+  <div hidden>
+    <div id="ans-calendar">
+      <p>This shows how to set up and sync your GoHighLevel calendar with your personal Google Calendar, so you can schedule calls and appointments easily. Once connected, you can book straight from the Opportunities tab — and the system automatically sends confirmation and reminder texts (24 hours and 6 hours before) to save you time and prevent no-shows.</p>
+      <div class="ans-nut">
+        <div class="nut-label">In a nutshell</div>
+        <ul>
+          <li>Go to Settings → Calendars and create your own calendar (e.g. "Aaron's Calendar").</li>
+          <li>Set your availability hours and press Confirm.</li>
+          <li>Go to Connections under Calendars and connect your Google Calendar to sync.</li>
+          <li>To book someone: Opportunities → Contact → Book/Update Appointment, then select your calendar.</li>
+          <li>Once booked, the system auto-sends confirmation, 24-hour and 6-hour reminders.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="ans-unresponsive">
+      <p>The Unresponsive Automation follows up automatically with leads who haven't replied after you've called and texted them. Trigger it only after 1–3 call attempts in the first 24 hours. It then sends 2–3 follow-up texts over the next 24 hours, and stops automatically as soon as the lead replies or you move them to the next pipeline stage.</p>
+      <div class="ans-nut">
+        <div class="nut-label">In a nutshell</div>
+        <ul>
+          <li>Trigger only after 1–3 call attempts in the first 24 hours.</li>
+          <li>Move the lead into the Unresponsive tab to start the automation.</li>
+          <li>Sends 2–3 automated follow-up texts over 24 hours.</li>
+          <li>Stops automatically if the lead replies or changes stage.</li>
+          <li>Saves time by automating manual follow-ups.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="ans-zeroleads">
+      <p>It's completely normal for Meta ads to fluctuate day to day — some days two or three leads, some days none. A quiet day doesn't mean the campaign isn't working. Meta's algorithm is constantly learning who to show your ads to, and that takes time.</p>
+      <p>Rather than reacting to one or two slow days, look at the trend over the past week or two for true performance. If results genuinely decline, we have several optimisation levers to improve them.</p>
+      <div class="ans-nut">
+        <div class="nut-label">In a nutshell</div>
+        <ul>
+          <li>Daily lead fluctuations are completely normal on Meta.</li>
+          <li>Zero-lead days do not mean the campaign is failing.</li>
+          <li>Meta's system learns and optimises over time.</li>
+          <li>Always review performance over 7–14 days, not day-to-day.</li>
+          <li>If results drop, we can adjust targeting, creatives, or budget.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="ans-location">
+      <p>Meta's location targeting uses a mix of signals — device GPS, Wi-Fi, IP address, and profile location. It's generally accurate but never exact. Someone near your service area (at work, visiting a nearby suburb, or passing through on mobile data) can still be classified as in-zone, and shared networks or mobile towers can blur the boundaries.</p>
+      <p>Because of this, a small share of out-of-area leads is normal — industry-wide, about one in six (15–20%). These are automatically disqualified in the CRM so your team only focuses on genuine, in-area enquiries.</p>
+      <div class="ans-nut">
+        <div class="nut-label">In a nutshell</div>
+        <ul>
+          <li>Meta's location targeting uses GPS, Wi-Fi and IP data, which aren't always exact.</li>
+          <li>People near your boundary or on shared networks can appear "in-area."</li>
+          <li>Around one in six leads (15–20%) outside your zone is completely normal.</li>
+          <li>These are auto-filtered so only genuine local enquiries reach you.</li>
+          <li>If it goes above 20%, we adjust geo-targeting and tighten filters.</li>
+        </ul>
+      </div>
+      <div class="ans-nut">
+        <div class="nut-label">If &gt;20% out-of-area, we…</div>
+        <ul>
+          <li>🔧 Tighten ad geo-targeting and apply area exclusions.</li>
+          <li>🧭 Add postcode or suburb validation on the lead form.</li>
+          <li>📍 Include a service-area callout in ad copy and creative.</li>
+          <li>🚫 Restrict booking links to approved postcodes only.</li>
+          <li>💰 Review placements/spend and cut poor-performing regions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="ans-budget">
+      <p>Meta ad spend can fluctuate slightly from day to day — some days a bit over $50, some a bit under. Meta automatically adjusts your daily budget based on real-time factors like ad competition, audience activity, and demand. By the end of each 7-day period it always balances out, so your total weekly spend never exceeds $350 — an average of $50/day as agreed.</p>
+      <div class="ans-nut">
+        <div class="nut-label">In a nutshell</div>
+        <ul>
+          <li>Meta adjusts daily spend based on traffic, demand, and competition.</li>
+          <li>Some days may be slightly above or below $50.</li>
+          <li>Over 7 days, the total always averages to the agreed amount ($350).</li>
+          <li>You'll never be charged more than your set weekly budget.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="ans-free">
+      <p>The "free offer" ad style — Free Quote, Free Plan, Free Consultation — works because it gives people a clear reason to act. Without an upfront offer, your ad looks like every other business on Facebook and attracts fewer leads. Ads with a free, value-based offer consistently generate higher lead volume and better engagement.</p>
+      <p>It's also normal for a few people to ask if it's completely free — Facebook users skim quickly and misread parts of the ad. These aren't bad leads; they're interested but need clarification. The best response is to qualify them politely and explain who the offer is for.</p>
+      <div class="ans-nut">
+        <div class="nut-label">In a nutshell</div>
+        <ul>
+          <li>"Free" offers consistently attract more leads than generic ads.</li>
+          <li>Facebook users respond to simple, value-based offers.</li>
+          <li>Some people will ask if it's truly free — that's normal.</li>
+          <li>These leads are often genuine and just need clarification.</li>
+          <li>Lead with value first, then qualify.</li>
+        </ul>
+      </div>
+      <div class="ans-script">
+        <div class="scr-label">Pivot script</div>
+        <p>"This is for eligible homeowners. Can you tell me a bit more about what you're looking to do so I can check your eligibility?"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- video lightbox -->
+  <div class="vfaq-modal" id="vfaqModal" onclick="if(event.target===this)closeVid()">
+    <div class="vfaq-modal-inner">
+      <div class="vfaq-modal-head">
+        <span class="mh-q" id="vfaqModalQ"></span>
+        <button class="vfaq-modal-close" type="button" onclick="closeVid()" aria-label="Close">✕</button>
+      </div>
+      <div class="vfaq-modal-scroll">
+        <div id="vfaqModalMedia"></div>
+        <div class="vfaq-answer" id="vfaqModalBody"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="bottom-nav">
     <a href="step-1.html" class="btn btn-secondary">&larr; Back to Step 1</a>
     <a href="step-3.html" class="btn btn-primary">Joined WhatsApp — Next Step &rarr;</a>
@@ -78,6 +444,44 @@
 <footer>
   <p>AT Media Partners &mdash; <a href="https://atmediapartners.com">atmediapartners.com</a></p>
 </footer>
+
+<script>
+  function openVid(card) {
+    var loom = card.getAttribute('data-loom');
+    var ansId = card.getAttribute('data-answer');
+    var q = card.getAttribute('data-q') || '';
+    var media = document.getElementById('vfaqModalMedia');
+    var body = document.getElementById('vfaqModalBody');
+    document.getElementById('vfaqModalQ').textContent = q;
+    if (loom) {
+      media.innerHTML = '<iframe src="https://www.loom.com/embed/' + loom + '" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    } else {
+      media.innerHTML = '';
+    }
+    var ans = ansId ? document.getElementById(ansId) : null;
+    body.innerHTML = ans ? ans.innerHTML : '';
+    document.getElementById('vfaqModal').classList.add('on');
+    document.getElementById('vfaqModal').querySelector('.vfaq-modal-scroll').scrollTop = 0;
+  }
+  function closeVid() {
+    var modal = document.getElementById('vfaqModal');
+    modal.classList.remove('on');
+    document.getElementById('vfaqModalMedia').innerHTML = '';
+    document.getElementById('vfaqModalBody').innerHTML = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeVid();
+  });
+  document.querySelectorAll('.faq-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var card = tab.closest('.faq-card');
+      card.querySelectorAll('.faq-tab').forEach(function(t){ t.classList.remove('on'); });
+      card.querySelectorAll('.faq-pane').forEach(function(p){ p.classList.remove('on'); });
+      tab.classList.add('on');
+      document.getElementById(tab.dataset.pane).classList.add('on');
+    });
+  });
+</script>
 
 </body>
 </html>

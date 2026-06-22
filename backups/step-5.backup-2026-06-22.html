@@ -146,108 +146,43 @@
     .fw-col.you-win .fw-head { color: #1e40af; }
     .fw-col.you-win p { color: #1e3a8a; }
 
-    /* ─── SEND → GET HALVES ─── */
-    .halves {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      background: white;
-    }
-    .halves .half { padding: 36px 38px; }
-    .halves .half.send { background: var(--bg-soft); }
-    .halves .half.get { background: #eff6ff; }
-    .halves .half .lab {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .halves .half.get .lab { color: var(--blue); }
-    .halves .half .big-h {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -0.4px;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-    .halves .half.get .big-h { color: #1e40af; }
-    .halves .half ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-    }
-    .halves .half li {
-      font-size: 14.5px;
-      color: var(--mid);
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      line-height: 1.45;
-    }
-    .halves .half li::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--muted);
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-    .halves .half.get li { color: #1e3a8a; }
-    .halves .half.get li::before { background: var(--blue); }
-    .halves .arrow-mid {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 22px rgba(37,99,235,0.32);
-      margin: 0 -28px;
-      z-index: 3;
-    }
-    .halves .arrow-mid svg { width: 24px; height: 24px; }
-
     /* ─── BENEFIT BANNER (frame their interest first) ─── */
     .benefit-banner {
       background: linear-gradient(135deg, #f0f9ff 0%, #eff6ff 100%);
       border: 1.5px solid #bfdbfe;
       border-radius: 20px;
-      padding: 34px 40px;
+      padding: 32px 36px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
       margin-bottom: 56px;
     }
-    .benefit-banner .bb-eyebrow {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 12px;
-    }
-    .benefit-banner .bb-head {
-      font-size: 24px;
+    .benefit-banner .bb-tag {
+      background: var(--blue);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 12px;
       font-weight: 900;
-      letter-spacing: -0.6px;
-      line-height: 1.25;
-      color: var(--navy);
-      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+      font-size: 15px;
+      text-align: center;
+      line-height: 1.3;
+      min-width: 140px;
     }
-    .benefit-banner .bb-head b { color: var(--blue); font-weight: 900; }
+    .benefit-banner .bb-tag small {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 4px;
+    }
     .benefit-banner .bb-text {
-      font-size: 15.5px;
-      color: var(--mid);
+      font-size: 17px;
+      color: var(--navy);
       line-height: 1.6;
-      max-width: 620px;
     }
     .benefit-banner .bb-text b {
       color: var(--navy);
@@ -317,34 +252,6 @@
       font-weight: 700;
     }
 
-    /* ─── DELIVERABLES GRID (what we turn footage into) ─── */
-    .deliver-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .deliver-item {
-      background: var(--bg-soft);
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.2s ease;
-    }
-    .deliver-item:hover { transform: translateY(-4px); border-color: #bfdbfe; box-shadow: 0 14px 32px rgba(37,99,235,0.1); }
-    .deliver-item .di-ic {
-      width: 44px; height: 44px; border-radius: 12px;
-      background: #eff6ff; color: var(--blue);
-      display: flex; align-items: center; justify-content: center; font-size: 22px;
-      flex-shrink: 0;
-    }
-    .deliver-item .di-title { font-size: 15.5px; font-weight: 800; color: var(--navy); letter-spacing: -0.2px; }
-    .deliver-item .di-desc { font-size: 13.5px; color: var(--mid); line-height: 1.5; }
-    @media (max-width: 760px) { .deliver-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 480px) { .deliver-grid { grid-template-columns: 1fr; } }
-
     /* ─── PHOTO TYPE ROW (what we need from you photos) ─── */
     .photo-types {
       display: grid;
@@ -358,11 +265,6 @@
       border-radius: 14px;
       padding: 20px 18px;
       text-align: left;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .photo-type:hover {
-      box-shadow: 0 12px 40px rgba(15,23,42,0.08);
-      transform: translateY(-2px);
     }
     .photo-type .pt-num {
       font-size: 28px;
@@ -428,64 +330,6 @@
       line-height: 1.55;
       margin-top: 3px;
     }
-
-    /* ─── TRANSFORM CAROUSEL ─── */
-    .tcar {
-      border: 1.5px solid var(--border);
-      border-radius: 22px;
-      padding: 28px 32px 22px;
-      background: white;
-      box-shadow: 0 10px 34px rgba(15,23,42,0.06);
-      margin: 32px 0;
-    }
-    .tcar-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .tcar-counter { font-size: 14px; font-weight: 800; color: var(--navy); }
-    .tcar-counter span { color: var(--muted); }
-    .tcar-navs { display: flex; gap: 10px; }
-    .tcar-nav {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border);
-      background: white;
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .tcar-nav:hover { border-color: var(--blue); color: var(--blue); background: #eff6ff; }
-    .tcar-nav:disabled { opacity: 0.35; cursor: default; }
-    .tcar-nav:disabled:hover { border-color: var(--border); color: var(--navy); background: white; }
-    .tcar-nav svg { width: 20px; height: 20px; }
-    .tcar-viewport { overflow: hidden; }
-    .tcar-track { display: flex; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .tcar-slide { flex: 0 0 100%; }
-    .tcar-cap {
-      text-align: center;
-      margin-top: 16px;
-      font-size: 14.5px;
-      color: var(--mid);
-      font-weight: 600;
-    }
-    .tcar-dots { display: flex; gap: 8px; justify-content: center; margin-top: 18px; }
-    .tcar-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--border);
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .tcar-dot.on { background: var(--blue); width: 26px; border-radius: 100px; }
 
     /* ─── BEFORE/AFTER TRANSFORM ROW ─── */
     .transform-row {
@@ -584,32 +428,6 @@
       min-height: 0;
     }
 
-    /* ─── LIVE ADS MARQUEE ─── */
-    .ad-marquee {
-      overflow: hidden;
-      position: relative;
-      margin: 24px 0;
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-    }
-    .ad-marquee-track {
-      display: flex;
-      gap: 18px;
-      width: max-content;
-      animation: ad-scrollx 32s linear infinite;
-    }
-    @keyframes ad-scrollx {
-      from { transform: translateX(0); }
-      to { transform: translateX(calc(-50% - 9px)); }
-    }
-    .ad-marquee .example-card {
-      width: 300px;
-      flex: 0 0 300px;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .ad-marquee-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
-    }
-
     /* ─── EXAMPLE GALLERY ─── */
     .example-gallery {
       display: grid;
@@ -643,60 +461,6 @@
     /* Uniform 4-up client examples — fixed box, no cropping */
     .example-gallery.client-4 {
       grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* ─── GROUPED CLIENT PANELS ─── */
-    .client-panel {
-      border: 1.5px solid var(--border);
-      border-radius: 18px;
-      padding: 22px 24px 24px;
-      background: var(--bg-soft);
-      margin-bottom: 18px;
-    }
-    .client-panel .cp-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .client-panel .cp-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: var(--navy);
-      color: #fff;
-      font-weight: 800;
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .client-panel .cp-title {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-    .client-panel .cp-title span {
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 13px;
-    }
-    .client-panel .cp-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    .client-panel .cp-grid.three {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: 900px) {
-      .client-panel .cp-grid,
-      .client-panel .cp-grid.three { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 540px) {
-      .client-panel .cp-grid,
-      .client-panel .cp-grid.three { grid-template-columns: 1fr; }
     }
     .example-card .ec-img.ec-uniform {
       aspect-ratio: 3 / 4;
@@ -963,7 +727,6 @@
     }
     @media (max-width: 720px) {
       .vf-grid:has(.vf-reel-wide) { grid-template-columns: 1fr; }
-      .vf-reel.vf-reel-wide { height: auto; aspect-ratio: 4 / 5; max-width: 420px; margin: 0 auto; width: 100%; }
     }
     .vf-sound-btn {
       position: absolute;
@@ -1074,78 +837,69 @@
       border-radius: 100px;
     }
 
-    /* ─── CRUCIAL REQUIREMENTS ─── */
+    /* ─── TWO NON-NEGOTIABLES ─── */
     .non-neg {
-      background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);
-      border: 1.5px solid #fcd34d;
+      background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+      border: 2px solid #fcd34d;
       border-radius: 20px;
-      padding: 30px 34px;
+      padding: 36px 40px;
       margin: 48px 0;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .non-neg:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 44px rgba(146,64,14,0.16);
-    }
-    .non-neg .nn-pill {
-      display: inline-flex;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
       align-items: center;
-      gap: 7px;
+    }
+    .non-neg .nn-mark {
+      width: 88px;
+      height: 88px;
       background: #92400e;
-      color: #fffbeb;
+      color: #fef3c7;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 900;
+      flex-shrink: 0;
+      transform: rotate(-3deg);
+    }
+    .non-neg .nn-eyebrow {
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 6px 13px;
-      border-radius: 100px;
-      margin-bottom: 12px;
+      color: #92400e;
+      margin-bottom: 6px;
     }
     .non-neg h3 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 900;
       color: #78350f;
       letter-spacing: -0.5px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       line-height: 1.2;
     }
-    .non-neg .nn-lead {
-      color: #92400e;
-      font-size: 14.5px;
-      line-height: 1.55;
-      margin-bottom: 20px;
-      max-width: 640px;
-    }
-    .non-neg .nn-lead b { color: #78350f; font-weight: 800; }
     .non-neg .nn-things {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      display: flex;
+      gap: 18px;
+      margin-top: 14px;
     }
     .non-neg .nn-thing {
-      background: #fff;
+      flex: 1;
+      background: rgba(255,255,255,0.6);
       border: 1.5px solid #fcd34d;
-      border-radius: 14px;
-      padding: 18px 20px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 12px;
+      padding: 14px 18px;
     }
-    .non-neg .nn-thing:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 26px rgba(146,64,14,0.14);
-    }
-    .non-neg .nn-thing .nn-ico { font-size: 24px; line-height: 1; flex-shrink: 0; }
     .non-neg .nn-thing b {
       display: block;
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 900;
       color: #78350f;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .non-neg .nn-thing span {
-      font-size: 13.5px;
+      font-size: 13px;
       color: #92400e;
       line-height: 1.5;
     }
@@ -1195,8 +949,6 @@
       .fw-col { border-bottom: 1.5px solid var(--border); }
       .fw-col:nth-child(2) { border-right: none; }
       .fw-col:nth-child(3), .fw-col:nth-child(4) { border-bottom: none; }
-      .halves { grid-template-columns: 1fr; }
-      .halves .arrow-mid { margin: -28px auto; transform: rotate(90deg); }
       .photo-types { grid-template-columns: 1fr 1fr; }
       .transform-row { grid-template-columns: 1fr; }
       .transform-arrow { transform: rotate(90deg); margin: -8px auto; }
@@ -1209,7 +961,8 @@
       .vf-body { padding: 0 20px 22px; }
       .example-gallery { grid-template-columns: 1fr 1fr; }
       .need-list { grid-template-columns: 1fr; }
-      .non-neg .nn-things { grid-template-columns: 1fr; }
+      .non-neg { grid-template-columns: 1fr; text-align: center; }
+      .non-neg .nn-mark { margin: 0 auto; }
       .submit-cta { grid-template-columns: 1fr; padding: 32px 28px; }
       .benefit-banner { grid-template-columns: 1fr; }
     }
@@ -1219,109 +972,6 @@
       .numbers { padding: 40px 28px; }
       .numbers h3 { font-size: 26px; }
       .stat-box .stat-num { font-size: 40px; }
-    }
-
-    /* ─── YOUR 2 JOBS ─── */
-    .jobs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 32px;
-    }
-    .job {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      background: white;
-      border: 1.5px solid var(--border);
-      border-radius: 18px;
-      padding: 26px 28px;
-      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .job:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,23,42,0.1); }
-    .job .job-n {
-      flex: none;
-      width: 46px; height: 46px;
-      border-radius: 13px;
-      background: var(--blue);
-      color: white;
-      font-size: 20px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 16px rgba(37,99,235,0.32);
-    }
-    .job h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 5px; }
-    .job p { font-size: 14.5px; color: var(--mid); line-height: 1.5; }
-    .job .job-ic { margin-right: 5px; }
-    .jobs-foot {
-      text-align: center;
-      font-size: 22px;
-      color: var(--navy);
-      font-weight: 800;
-      letter-spacing: -0.4px;
-      margin-top: 26px;
-      padding: 20px 28px;
-      background: var(--bg-soft);
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .jobs-foot::before { content: "✅"; font-size: 22px; }
-    .jobs-foot b { color: var(--blue); }
-    @media (max-width: 540px) { .jobs-foot { font-size: 18px; } }
-
-    /* ─── STICKY SECTION TABS ─── */
-    .jumpbar-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      margin: 24px 0 0;
-      padding: 8px 0;
-    }
-    .jumpbar {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 7px;
-      display: flex;
-      gap: 8px;
-      background: #f1f5f9;
-      border-radius: 16px;
-    }
-    .jump {
-      flex: 1;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
-      padding: 14px 12px;
-      border-radius: 12px;
-      border: none;
-      background: transparent;
-      font-family: inherit;
-      font-weight: 800; font-size: 16px;
-      color: var(--mid);
-      cursor: pointer; text-decoration: none;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.15s ease;
-    }
-    .jump .ji { font-size: 22px; }
-    .jump .jh { font-size: 11px; font-weight: 700; color: var(--muted); }
-    .jump:hover { transform: translateY(-2px); }
-    .jump.on { background: white; color: var(--navy); box-shadow: 0 4px 14px rgba(15,23,42,0.1); }
-    .jump.on .jh { color: var(--blue); }
-
-    /* tab panes */
-    .ctab-pane { display: none; }
-    .ctab-pane.on { display: block; animation: ctabFade 0.28s ease; }
-    @keyframes ctabFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-
-    @media (max-width: 540px) {
-      .jobs { grid-template-columns: 1fr; }
-      .jumpbar { padding: 6px; gap: 6px; }
-      .jump { font-size: 13px; padding: 11px 6px; }
-      .jump .ji { font-size: 19px; }
-      .jump .jh { display: none; }
     }
   </style>
 </head>
@@ -1357,71 +1007,68 @@
   <div class="creative-hero">
     <div class="step-badge">🎨 Step 5 of 6 — Creative Brief</div>
     <h1 class="page-title">A Few Photos. A Few Clips. <span>We Handle The Rest.</span></h1>
-    <p class="page-subtitle">The creative drives <b>80% of your ad results</b>. Send raw phone material — we turn it into hyper-realistic AI ads and high-converting video.</p>
-  </div>
-
-  <!-- YOUR 2 JOBS -->
-  <div class="jobs">
-    <div class="job">
-      <div class="job-n">1</div>
-      <div>
-        <h3><span class="job-ic">📷</span>Send a few phone photos</h3>
-        <p>Selfies, your team, on the job, before &amp; afters. Even one or two is enough to start — no shoot required.</p>
-      </div>
-    </div>
-    <div class="job">
-      <div class="job-n">2</div>
-      <div>
-        <h3><span class="job-ic">🎬</span>Film a few short clips</h3>
-        <p>60 seconds on your phone. We give you the script — you just hit record. That's the whole job.</p>
-      </div>
-    </div>
-  </div>
-  <div class="jobs-foot">That's everything we need. <b>We handle the rest.</b></div>
-
-  <!-- STICKY SECTION TABS -->
-  <div class="jumpbar-wrap">
-    <div class="jumpbar">
-      <button class="jump on" type="button" data-pane="sec-photos"><span class="ji">📷</span>Photos<span class="jh">What to send</span></button>
-      <button class="jump" type="button" data-pane="sec-examples"><span class="ji">✨</span>Examples<span class="jh">What we make</span></button>
-      <button class="jump" type="button" data-pane="sec-video"><span class="ji">🎬</span>Video<span class="jh">How to film</span></button>
-    </div>
+    <p class="page-subtitle">The creative drives <b>80% of your ad results</b> — and the less you have to worry about, the faster we launch. Send us simple raw material from your phone, we transform it into hyper-realistic AI ads and high-converting video, and you get more leads with less time spent on shoots.</p>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- SECTION 1: PHOTOS                                       -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <section class="creative-section ctab-pane on" id="sec-photos">
+  <section class="creative-section">
     <div class="section-eyebrow">
       <div class="num-chip">01</div>
       <div class="eyebrow-label">Section One — Photos</div>
     </div>
     <h2 class="big">Send raw photos. Get <span>hyper-realistic AI ads.</span></h2>
+    <p class="section-lede">You don't need a photographer. You don't need to plan a shoot. Send us what you've got from your phone — selfies, job sites, your team — and we'll transform them into high-performing ad creative.</p>
+
+    <!-- 4-step framework -->
+    <div class="framework">
+      <div class="fw-col">
+        <div class="fw-num">01 — From you</div>
+        <div class="fw-head">Phone photos. Whatever you have.</div>
+        <p>Solo selfies in your uniform, team shots, on-site action, before & afters. No production required.</p>
+      </div>
+      <div class="fw-col">
+        <div class="fw-num">02 — We make</div>
+        <div class="fw-head">Hyper-realistic AI ad creative</div>
+        <p>5+ branded variations per concept. Multiple colour schemes, hooks, and layouts tested in parallel.</p>
+      </div>
+      <div class="fw-col">
+        <div class="fw-num">03 — Why it works</div>
+        <div class="fw-head">10× the click-through rate</div>
+        <p>Tested across 24+ AU & NZ campaigns. AI ads consistently outperform real photos for tradie businesses.</p>
+      </div>
+      <div class="fw-col you-win">
+        <div class="fw-num">04 — Your win</div>
+        <div class="fw-head">Faster launch. Less of your time.</div>
+        <p>15 minutes of phone photos = weeks of campaign material. You stay on the tools, we generate the leads.</p>
+      </div>
+    </div>
 
     <!-- WHAT WE NEED -->
-    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin-top:52px; margin-bottom:8px;">What we need from you</h3>
+    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin-bottom:8px;">What we need from you</h3>
     <p style="color:var(--mid); margin-bottom:24px;">Four photo types. Send what's easiest — even one or two of these is enough to start.</p>
 
     <div class="photo-types">
       <div class="photo-type">
         <div class="pt-num">01</div>
         <div class="pt-name">Solo in uniform</div>
-        <div class="pt-desc">Face + logo, looking at camera.</div>
+        <div class="pt-desc">Face clear, logo visible, looking at camera. The single most important photo type.</div>
       </div>
       <div class="photo-type">
         <div class="pt-num">02</div>
         <div class="pt-name">Team photo</div>
-        <div class="pt-desc">Branded uniforms, on-site or by the van.</div>
+        <div class="pt-desc">Builds trust with bigger jobs. Branded uniforms, on-site or in front of vans.</div>
       </div>
       <div class="photo-type">
         <div class="pt-num">03</div>
         <div class="pt-name">On the job</div>
-        <div class="pt-desc">You doing the work — face + logo in frame.</div>
+        <div class="pt-desc">You actually doing the work. People + face + logo all visible in frame.</div>
       </div>
       <div class="photo-type">
         <div class="pt-num">04</div>
         <div class="pt-name">Before & after</div>
-        <div class="pt-desc">5 jobs, same angle both shots. Best for renos.</div>
+        <div class="pt-desc">5 separate jobs, same angle for both shots. Highest converter for renovation work.</div>
       </div>
     </div>
 
@@ -1434,145 +1081,94 @@
     <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:48px 0 8px;">Real Examples From Our Clients</h3>
     <p style="color:var(--mid); margin-bottom:24px;">The kind of raw phone photos partners send us — exactly what we work from.</p>
 
-    <div class="client-panel">
-      <div class="cp-head">
-        <div class="cp-badge">01</div>
-        <div class="cp-title">Example 1</div>
+    <div class="example-gallery client-4">
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client-example-01-solo-uniform.png" alt="Client example — solo in uniform">
+        </div>
+        <div class="ec-meta">
+          <div class="ec-label">01 Solo in uniform</div>
+        </div>
       </div>
-      <div class="cp-grid">
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client-example-01-solo-uniform.png" alt="Client example — solo in uniform">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Solo in uniform</div>
-          </div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client-example-02-team-photo.png" alt="Client example — team photo">
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client-example-02-team-photo.png" alt="Client example — team photo">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Team photo</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">02 Team Photo</div>
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client-example-03-on-the-job.png" alt="Client example — on the job">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">On the job</div>
-          </div>
+      </div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client-example-03-on-the-job.png" alt="Client example — on the job">
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform ec-stack">
-            <img src="assets/slides/client-example-04-before.jpeg" alt="Client example — before">
-            <img src="assets/slides/client-example-04-after.jpeg" alt="Client example — after">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Before &amp; after</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">03 On the job</div>
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform ec-stack">
+          <img src="assets/slides/client-example-04-before.jpeg" alt="Client example — before">
+          <img src="assets/slides/client-example-04-after.jpeg" alt="Client example — after">
+        </div>
+        <div class="ec-meta">
+          <div class="ec-label">04 Before and After</div>
         </div>
       </div>
     </div>
 
-    <div class="client-panel">
-      <div class="cp-head">
-        <div class="cp-badge">02</div>
-        <div class="cp-title">Example 2</div>
+    <div class="example-gallery client-4" style="margin-top:16px;">
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client2-example-01-solo-uniform.jpeg" alt="Client example — solo in uniform">
+        </div>
+        <div class="ec-meta">
+          <div class="ec-label">01 Solo in uniform</div>
+        </div>
       </div>
-      <div class="cp-grid three">
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client2-example-01-solo-uniform.jpeg" alt="Client example — solo in uniform">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Solo in uniform</div>
-          </div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client2-example-02-on-the-job.jpg" alt="Client example — on the job" style="object-fit:cover;">
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client2-example-02-on-the-job.jpg" alt="Client example — on the job" style="object-fit:cover;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">On the job</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">02 On the job</div>
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform ec-stack">
-            <img src="assets/slides/client2-example-03-before.jpg" alt="Client example — before">
-            <img src="assets/slides/client2-example-03-after.jpg" alt="Client example — after">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Before &amp; after</div>
-          </div>
+      </div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform ec-stack">
+          <img src="assets/slides/client2-example-03-before.jpg" alt="Client example — before">
+          <img src="assets/slides/client2-example-03-after.jpg" alt="Client example — after">
+        </div>
+        <div class="ec-meta">
+          <div class="ec-label">03 Before and After</div>
         </div>
       </div>
     </div>
 
-    <div class="client-panel">
-      <div class="cp-head">
-        <div class="cp-badge">03</div>
-        <div class="cp-title">Example 3</div>
-      </div>
-      <div class="cp-grid three">
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client3-example-01-solo-uniform.jpeg" alt="Client example — solo in uniform">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Solo in uniform</div>
-          </div>
+    <div class="example-gallery client-4" style="margin-top:16px;">
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client3-example-01-solo-uniform.jpeg" alt="Client example — solo in uniform">
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client3-example-02-on-the-job.png" alt="Client example — on the job" style="object-fit:cover;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">On the job</div>
-          </div>
-        </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform ec-stack">
-            <img src="assets/slides/client3-example-03-before.jpeg" alt="Client example — before" style="object-position:center 62%;">
-            <img src="assets/slides/client3-example-03-after.jpeg" alt="Client example — after">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Before &amp; after</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">01 Solo in uniform</div>
         </div>
       </div>
-    </div>
-
-    <div class="client-panel">
-      <div class="cp-head">
-        <div class="cp-badge">04</div>
-        <div class="cp-title">Example 4</div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform">
+          <img src="assets/slides/client3-example-02-on-the-job.png" alt="Client example — on the job" style="object-fit:cover;">
+        </div>
+        <div class="ec-meta">
+          <div class="ec-label">02 On the Job</div>
+        </div>
       </div>
-      <div class="cp-grid three">
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client4-example-01-solo-uniform.png" alt="Client example — solo in uniform" style="object-fit:cover;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Solo in uniform</div>
-          </div>
+      <div class="example-card">
+        <div class="ec-img ec-uniform ec-stack">
+          <img src="assets/slides/client3-example-03-before.jpeg" alt="Client example — before" style="object-position:center 62%;">
+          <img src="assets/slides/client3-example-03-after.jpeg" alt="Client example — after">
         </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client4-example-02-team-photo.png" alt="Client example — team photo" style="object-fit:cover;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Team photo</div>
-          </div>
-        </div>
-        <div class="example-card">
-          <div class="ec-img ec-uniform">
-            <img src="assets/slides/client4-example-03-on-the-job.jpeg" alt="Client example — on the job" style="object-fit:cover;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">On the job</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">03 Before and After</div>
         </div>
       </div>
     </div>
@@ -1581,257 +1177,57 @@
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- SECTION 2: WHAT WE TURN IT INTO                        -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <section class="creative-section ctab-pane" id="sec-examples">
+  <section class="creative-section">
     <div class="section-eyebrow">
       <div class="num-chip">02</div>
       <div class="eyebrow-label">The Output</div>
     </div>
     <h2 class="big">From a phone photo to <span>a scroll-stopping ad.</span></h2>
+    <p class="section-lede">Here's the actual transformation. The same photos you'd never use as marketing material become the highest-performing creative in your account.</p>
 
-    <!-- BEFORE/AFTER TRANSFORM CAROUSEL -->
-    <div class="tcar" id="transformCarousel">
-      <div class="tcar-head">
-        <div class="tcar-counter">Transformation <span id="tcarCount">01 / 01</span></div>
-        <div class="tcar-navs">
-          <button class="tcar-nav" id="tcarPrev" type="button" aria-label="Previous transformation">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button class="tcar-nav" id="tcarNext" type="button" aria-label="Next transformation">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
+    <!-- BEFORE/AFTER TRANSFORM -->
+    <div class="transform-row">
+      <div class="transform-side from">
+        <span class="ts-label">Your raw photo</span>
+        <img src="assets/slides/baden-raw.jpg" alt="Raw client photo" style="object-position: center top;">
       </div>
-      <div class="tcar-viewport">
-        <div class="tcar-track" id="tcarTrack">
-          <div class="tcar-slide">
-            <div class="transform-row">
-              <div class="transform-side from">
-                <span class="ts-label">Your raw photo</span>
-                <img src="assets/slides/baden-raw.jpg" alt="Raw client photo" style="object-position: center top;">
-              </div>
-              <div class="transform-arrow">→</div>
-              <div class="transform-side to">
-                <span class="ts-label">AI ad output</span>
-                <img src="assets/slides/baden-ai-ad.png" alt="AI ad creative output" style="object-position: center center;">
-              </div>
-            </div>
-            <div class="tcar-cap">A casual phone snap becomes a scroll-stopping branded ad.</div>
-          </div>
-          <div class="tcar-slide">
-            <div class="transform-row">
-              <div class="transform-side from">
-                <span class="ts-label">Your raw photo</span>
-                <img src="assets/slides/cornerstone-bruce-raw.jpeg" alt="Raw client photo" style="object-position: center center;">
-              </div>
-              <div class="transform-arrow">→</div>
-              <div class="transform-side to">
-                <span class="ts-label">AI ad output</span>
-                <img src="assets/slides/cornerstone-bruce-ai-ad.png" alt="AI ad creative output" style="object-position: center center;">
-              </div>
-            </div>
-            <div class="tcar-cap">A car selfie becomes a branded kitchen-transformation ad.</div>
-          </div>
-          <div class="tcar-slide">
-            <div class="transform-row">
-              <div class="transform-side from">
-                <span class="ts-label">Your raw photo</span>
-                <img src="assets/slides/prompt-adam-raw.jpeg" alt="Raw client photo" style="object-position: center top;">
-              </div>
-              <div class="transform-arrow">→</div>
-              <div class="transform-side to">
-                <span class="ts-label">AI ad output</span>
-                <img src="assets/slides/prompt-adam-ai-ad.png" alt="AI ad creative output" style="object-position: center center;">
-              </div>
-            </div>
-            <div class="tcar-cap">A quick photo by the ute becomes a branded roofing ad.</div>
-          </div>
-          <div class="tcar-slide">
-            <div class="transform-row">
-              <div class="transform-side from">
-                <span class="ts-label">Your raw photo</span>
-                <img src="assets/slides/blh-mike-raw.png" alt="Raw client photo" style="object-position: center center;">
-              </div>
-              <div class="transform-arrow">→</div>
-              <div class="transform-side to">
-                <span class="ts-label">AI ad output</span>
-                <img src="assets/slides/blh-mike-ai-ad.png" alt="AI ad creative output" style="object-position: center center;">
-              </div>
-            </div>
-            <div class="tcar-cap">A waterfront selfie becomes a branded owner-intro ad.</div>
-          </div>
-        </div>
+      <div class="transform-arrow">→</div>
+      <div class="transform-side to">
+        <span class="ts-label">AI ad output</span>
+        <img src="assets/slides/baden-ai-ad.png" alt="AI ad creative output" style="object-position: center center;">
       </div>
-      <div class="tcar-dots" id="tcarDots"></div>
     </div>
 
     <!-- EXAMPLE GALLERY -->
     <h3 style="font-size:22px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin: 48px 0 8px;">Live ads, in the wild</h3>
     <p style="color:var(--mid); margin-bottom:24px;">Real ads we've run for tradie partners. Each variation tests a different colour scheme, hook, and layout — we keep the winners, kill the losers.</p>
 
-    <div class="ad-marquee">
-      <div class="ad-marquee-track">
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-talking.png" alt="Live Handy Sanders Facebook ad — owner intro" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · Owner intro</div>
-            <div class="ec-why">Face + name builds instant trust before they enquire.</div>
-          </div>
+    <div class="example-gallery">
+      <div class="example-card">
+        <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
+          <img src="assets/slides/jjt-building-live-ad.png" alt="Live JJT Building Facebook ad" style="height:auto; object-fit:contain;">
         </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/jjt-building-live-ad.png" alt="Live JJT Building Facebook ad" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">JJT Building · Offer ad</div>
-            <div class="ec-why">Bold offer + face + uniform = scroll-stop in 0.5s.</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">Live Facebook Ad</div>
+          <div class="ec-why">Bold offer + face + uniform = trust + scroll-stop in 0.5s.</div>
         </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-onsite.png" alt="Live Handy Sanders Facebook ad — on the job" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · On the job</div>
-            <div class="ec-why">Owner up front, team working behind — shows it's real.</div>
-          </div>
+      </div>
+      <div class="example-card">
+        <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
+          <img src="assets/slides/jjt-building-live-ad-2.png" alt="Live JJT Building Facebook ad — backyard upgrade" style="height:auto; object-fit:contain;">
         </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/jjt-building-live-ad-2.png" alt="Live JJT Building Facebook ad — palette test" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">JJT Building · Palette test</div>
-            <div class="ec-why">Same photo, alternate colour palette to A/B test attention.</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">Variation B</div>
+          <div class="ec-why">Same photo, alternate colour palette to A/B test attention.</div>
         </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-selfie.png" alt="Live Handy Sanders Facebook ad — selfie" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · Selfie</div>
-            <div class="ec-why">Casual selfie feels organic — not like a paid ad.</div>
-          </div>
+      </div>
+      <div class="example-card">
+        <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
+          <img src="assets/slides/jjt-building-live-ad-3.png?v=2" alt="Live JJT Building Facebook ad — meet Josh" style="height:auto; object-fit:contain;">
         </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-roof-solo.png" alt="Live Roofing &amp; Spouting NZ Facebook ad — on-site" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Roofing NZ · On-site</div>
-            <div class="ec-why">Tradie on the roof, hi-vis + smile = local and legit.</div>
-          </div>
-        </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/jjt-building-live-ad-3.png?v=2" alt="Live JJT Building Facebook ad — headline test" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">JJT Building · Headline test</div>
-            <div class="ec-why">Different headline framing finds the highest-CTR copy.</div>
-          </div>
-        </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-video.png" alt="Live Handy Sanders Facebook video ad" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · Video ad</div>
-            <div class="ec-why">Talking-head video positions her as the expert.</div>
-          </div>
-        </div>
-        <div class="example-card">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-roof-video.png" alt="Live Roofing &amp; Spouting NZ Facebook video ad" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Roofing NZ · Video ad</div>
-            <div class="ec-why">Attention-grab headline over a talking-head clip.</div>
-          </div>
-        </div>
-        <!-- duplicate set for seamless loop -->
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-talking.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · Owner intro</div>
-            <div class="ec-why">Face + name builds instant trust before they enquire.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/jjt-building-live-ad.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">JJT Building · Offer ad</div>
-            <div class="ec-why">Bold offer + face + uniform = scroll-stop in 0.5s.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-onsite.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · On the job</div>
-            <div class="ec-why">Owner up front, team working behind — shows it's real.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/jjt-building-live-ad-2.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">JJT Building · Palette test</div>
-            <div class="ec-why">Same photo, alternate colour palette to A/B test attention.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-selfie.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · Selfie</div>
-            <div class="ec-why">Casual selfie feels organic — not like a paid ad.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-roof-solo.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Roofing NZ · On-site</div>
-            <div class="ec-why">Tradie on the roof, hi-vis + smile = local and legit.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/jjt-building-live-ad-3.png?v=2" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">JJT Building · Headline test</div>
-            <div class="ec-why">Different headline framing finds the highest-CTR copy.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-kat-video.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Handy Sanders · Video ad</div>
-            <div class="ec-why">Talking-head video positions her as the expert.</div>
-          </div>
-        </div>
-        <div class="example-card" aria-hidden="true">
-          <div class="ec-img" style="aspect-ratio:auto; background:#fff;">
-            <img src="assets/slides/live-roof-video.png" alt="" style="height:auto; object-fit:contain;">
-          </div>
-          <div class="ec-meta">
-            <div class="ec-label">Roofing NZ · Video ad</div>
-            <div class="ec-why">Attention-grab headline over a talking-head clip.</div>
-          </div>
+        <div class="ec-meta">
+          <div class="ec-label">Variation C</div>
+          <div class="ec-why">Same person, different headline framing — finds the highest-CTR copy.</div>
         </div>
       </div>
     </div>
@@ -1840,50 +1236,122 @@
       <span class="alert-icon">✅</span>
       <div class="alert-text"><strong>Nothing goes live without your sign-off.</strong> Every creative gets approved by you before it runs. You always have the final say.</div>
     </div>
+  </section>
 
-    <!-- NUMBERS DON'T LIE -->
-    <div class="numbers" style="margin-top:48px;">
-      <div class="n-eyebrow">📊 The Data</div>
-      <h3>10× the click-through rate. A fraction of the time. Nothing on you.</h3>
-      <p class="n-lede">We've split-tested AI creative against real photos across 24+ campaigns in AU & NZ. The result is so consistent it's no longer a debate — and it's why we run AI by default for every new partner.</p>
-      <div class="stat-row">
-        <div class="stat-box">
-          <span class="stat-num">10.15%</span>
-          <div class="stat-label">CTR with AI ad creative<br><span style="opacity:0.65;">vs 1.32% with real photos</span></div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">24+</span>
-          <div class="stat-label">Campaigns tested across<br>Australia &amp; New Zealand</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">99/100</span>
-          <div class="stat-label">Times AI beats human-photo creative on cost &amp; performance</div>
-        </div>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- NUMBERS DON'T LIE                                       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="numbers">
+    <div class="n-eyebrow">📊 The Data</div>
+    <h3>10× the click-through rate. A fraction of the time. Nothing on you.</h3>
+    <p class="n-lede">We've split-tested AI creative against real photos across 24+ campaigns in AU & NZ. The result is so consistent it's no longer a debate — and it's why we run AI by default for every new partner.</p>
+    <div class="stat-row">
+      <div class="stat-box">
+        <span class="stat-num">10.15%</span>
+        <div class="stat-label">CTR with AI ad creative<br><span style="opacity:0.65;">vs 1.32% with real photos</span></div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">24+</span>
+        <div class="stat-label">Campaigns tested across<br>Australia &amp; New Zealand</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">99/100</span>
+        <div class="stat-label">Times AI beats human-photo creative on cost &amp; performance</div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- SECTION 3: VIDEO ADS                                    -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <section class="creative-section ctab-pane" id="sec-video">
+  <section class="creative-section">
     <div class="section-eyebrow">
       <div class="num-chip">03</div>
       <div class="eyebrow-label">Section Three — Video</div>
     </div>
-    <h2 class="big">Five video formats. <span>Filmed on your phone.</span></h2>
-    <p class="section-lede">Vertical phone video drives the cheapest leads we generate. <b>The good news: you don't need a videographer, a script, or studio lighting. You need 60 seconds and your phone.</b></p>
+    <h2 class="big">Four video formats. <span>Filmed on your phone.</span></h2>
+    <p class="section-lede">Vertical phone video drives the cheapest leads we generate. The good news: you don't need a videographer, a script, or studio lighting. You need 60 seconds and your phone.</p>
 
     <!-- BENEFIT BANNER -->
     <div class="benefit-banner">
-      <div class="bb-eyebrow">Why this is for you</div>
-      <div class="bb-head">Every top campaign shares one thing: <b>vertical phone video from the owner.</b></div>
-      <div class="bb-text">Homeowners want to see who they're hiring before they enquire — campaigns that skip this take 3× longer to find a winner.</div>
+      <div class="bb-tag"><small>Why this is</small>For you</div>
+      <div class="bb-text">Our highest-performing campaigns all share one thing: <b>vertical phone video from the owner.</b> Homeowners want to see who they're hiring before they enquire. The campaigns that skip this step take 3× longer to find their winning creative.</div>
     </div>
 
-    <!-- STEP 1: THE FIVE FORMATS -->
-    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:48px 0 8px;">1 · The five formats that work</h3>
-    <p style="color:var(--mid); margin-bottom:0;">Tap any format to see real examples and exactly how to film it. Pick whichever feels easiest first — one good clip beats four mediocre ones.</p>
+    <!-- RECORDING GUIDE -->
+    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:48px 0 8px;">Complete Guide to Recording High-Converting Video Ads</h3>
+    <p style="color:var(--mid); margin-bottom:24px; max-width:760px;">To get the best possible results from your video campaigns, we utilise five core video formats. Recording these is straightforward, and you do not need a professional camera crew. Simply follow the framework below to nail your setup and delivery.</p>
+
+    <h4 style="font-size:19px; font-weight:900; color:var(--navy); letter-spacing:-0.3px; margin:0 0 4px;">The 5 Core Video Formats to Record</h4>
+    <ol class="format-steps">
+      <li>
+        <div>
+          <div class="fs-name">Selfie / Talking Head</div>
+          <div class="fs-desc">Hold your phone at eye level and speak directly to the lens. Keep it casual and authentic to build a personal connection with the viewer.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="fs-name">Project Showcase</div>
+          <div class="fs-desc">Film a horizontal walkthrough of a finished job site. Walk the viewer through the project, highlighting your craftsmanship and pointing out specific details.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="fs-name">Testimonials</div>
+          <div class="fs-desc">Hand the phone to a happy client on-site or set it up on a tripod. Have them share their genuine experience working with your team.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="fs-name">Transformations</div>
+          <div class="fs-desc">Capture the dramatic visual shift. Film the messy or outdated "before" state of a job site, and then film the final, pristine "after" result from the exact same angle.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="fs-name">Educational Videos</div>
+          <div class="fs-desc">Stand in front of a clean background or an active job site and share helpful tips, trade secrets, or industry advice to position yourself as the trusted local expert.</div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="alert blue" style="margin-top:16px;">
+      <span class="alert-icon">📐</span>
+      <div class="alert-text"><strong>Formatting note:</strong> Always record your videos in a wide, horizontal format. Avoid tight, squished vertical videos so we can maximise the layout and visual impact of your ads.</div>
+    </div>
+
+    <h4 style="font-size:19px; font-weight:900; color:var(--navy); letter-spacing:-0.3px; margin:36px 0 4px;">Script Delivery and Recording Requirements</h4>
+    <div class="photo-types" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="photo-type">
+        <div class="pt-num">01</div>
+        <div class="pt-name">We Handle the Scripting</div>
+        <div class="pt-desc">Do not worry about what to say. Our team will generate and provide the exact script for your video ads.</div>
+      </div>
+      <div class="photo-type">
+        <div class="pt-num">02</div>
+        <div class="pt-name">Use a Teleprompter App</div>
+        <div class="pt-desc">To make recording effortless, download a teleprompter app on your smartphone. Copy and paste our script straight into the app so you can read your lines smoothly while looking directly at the camera lens.</div>
+      </div>
+    </div>
+
+    <!-- THE TWO NON-NEGOTIABLES -->
+    <div class="non-neg" style="margin-top:32px;">
+      <div class="nn-mark">!</div>
+      <div>
+        <div class="nn-eyebrow">Crucial requirements</div>
+        <h3>Eye contact &amp; enthusiasm.</h3>
+        <p style="color:#78350f; line-height:1.6;">While our production team can edit your footage, we <b>cannot edit or cut out poor delivery.</b> You must maintain direct eye contact with the camera lens throughout the video. Bring high energy and genuine enthusiasm — if the video lacks passion or you're constantly looking away from the camera, the ad won't perform.</p>
+        <div class="nn-things">
+          <div class="nn-thing"><b>👁️ Eye contact</b><span>Look directly at the lens. Not the screen, not the floor.</span></div>
+          <div class="nn-thing"><b>🔥 Enthusiasm</b><span>Energy in your voice. Smile. You're talking to a customer.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE 4 FORMATS -->
+    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin: 48px 0 8px;">The four formats that work</h3>
+    <p style="color:var(--mid); margin-bottom:0;">Pick whichever feels easiest to film first. One good clip beats four mediocre ones.</p>
 
     <p style="color:var(--muted); font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin: 24px 0 14px;">Click any format to expand →</p>
     <div class="video-formats">
@@ -2137,41 +1605,18 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- STEP 2: HOW WE SCRIPT IT -->
-    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:56px 0 8px;">2 · How we script it</h3>
-    <p style="color:var(--mid); margin-bottom:4px;">You never have to wonder what to say — we write it, you read it.</p>
-    <div class="jobs" style="margin-top:20px;">
-      <div class="job">
-        <div class="job-n">✍️</div>
-        <div>
-          <h3>We write the script</h3>
-          <p>Don't worry about what to say. Our team writes and sends you the exact, word-for-word script for every video ad.</p>
+      <!-- (orphaned old block follows — kept disabled) -->
+      <div style="display:none">
+        <div class="vf-tag">Format 04 (legacy)</div>
+          <h4>Before. Reveal. After.</h4>
+          <p class="vf-why"><b>Why it works:</b> The dramatic reveal is the highest-performing format for renovation businesses. The visual contrast does <b>all the selling for you</b> — no pitch needed.</p>
+          <div class="vf-tips">
+            <span class="vf-tip">15–45 sec</span>
+            <span class="vf-tip">Same angle both shots</span>
+            <span class="vf-tip">Music in edit</span>
+            <span class="vf-tip">Clear before state</span>
+          </div>
         </div>
-      </div>
-      <div class="job">
-        <div class="job-n">📱</div>
-        <div>
-          <h3>You read it off your phone</h3>
-          <p>Download a free teleprompter app, paste our script in, and read it smoothly while looking straight down the lens.</p>
-        </div>
-      </div>
-    </div>
-    <div class="alert blue" style="margin-top:16px;">
-      <span class="alert-icon">📐</span>
-      <div class="alert-text"><strong>Formatting note:</strong> Always film in a wide, horizontal format. Avoid tight, squished vertical clips so we can maximise the layout and visual impact of your ads.</div>
-    </div>
-
-    <!-- STEP 3: THE TWO RULES -->
-    <h3 style="font-size:24px; font-weight:900; color:var(--navy); letter-spacing:-0.4px; margin:56px 0 8px;">3 · Two rules that make or break it</h3>
-    <div class="non-neg">
-      <div class="nn-pill">⚠ Crucial requirements</div>
-      <h3>Eye contact &amp; enthusiasm.</h3>
-      <p class="nn-lead">We can edit your footage — but we <b>can't fix poor delivery.</b> These two things make or break the ad:</p>
-      <div class="nn-things">
-        <div class="nn-thing"><span class="nn-ico">👁️</span><div><b>Eye contact</b><span>Look straight down the lens — not the screen, not the floor — the whole time.</span></div></div>
-        <div class="nn-thing"><span class="nn-ico">🔥</span><div><b>Enthusiasm</b><span>Bring energy to your voice and smile. You're talking to a customer.</span></div></div>
       </div>
     </div>
 
@@ -2181,38 +1626,14 @@
         <h3>What we turn your raw footage into</h3>
         <span class="badge-time">⏱ 48hr turnaround</span>
       </div>
-      <div class="deliver-grid">
-        <div class="deliver-item">
-          <div class="di-ic">✂️</div>
-          <div class="di-title">Edited &amp; colour-graded</div>
-          <div class="di-desc">Cut, captioned, and graded — ready to drop straight into the feed.</div>
-        </div>
-        <div class="deliver-item">
-          <div class="di-ic">🎯</div>
-          <div class="di-title">Hooks A/B tested</div>
-          <div class="di-desc">3 versions of the first 2 seconds so we find what stops the scroll.</div>
-        </div>
-        <div class="deliver-item">
-          <div class="di-ic">🎵</div>
-          <div class="di-title">Sound &amp; music</div>
-          <div class="di-desc">Sound design and music that keeps people watching.</div>
-        </div>
-        <div class="deliver-item">
-          <div class="di-ic">📱</div>
-          <div class="di-title">Every format</div>
-          <div class="di-desc">Vertical &amp; square cuts for Reels, Stories, and Feed.</div>
-        </div>
-        <div class="deliver-item">
-          <div class="di-ic">🏷️</div>
-          <div class="di-title">Branded overlays</div>
-          <div class="di-desc">Lower-thirds with your name, business, and location.</div>
-        </div>
-        <div class="deliver-item">
-          <div class="di-ic">👉</div>
-          <div class="di-title">Booking CTA</div>
-          <div class="di-desc">Call-to-action cards driving straight to your booking link.</div>
-        </div>
-      </div>
+      <ul class="need-list">
+        <li><strong>Captioned, cut, colour-graded</strong> — ready for the feed</li>
+        <li><strong>Hooks A/B tested</strong> — 3 versions of the first 2 seconds</li>
+        <li><strong>Sound design + music</strong> — keeps the scroll alive</li>
+        <li><strong>Vertical &amp; square cuts</strong> — for Reels, Stories, Feed</li>
+        <li><strong>Branded lower-thirds</strong> — name, business, location</li>
+        <li><strong>CTA cards</strong> — driving to your booking link</li>
+      </ul>
     </div>
   </section>
 
@@ -2264,81 +1685,6 @@
       btn.classList.remove('unmuted');
     }
   }
-
-  // Transformation carousel
-  (function() {
-    var track = document.getElementById('tcarTrack');
-    if (!track) return;
-    var slides = track.children;
-    var total = slides.length;
-    var idx = 0;
-    var prevBtn = document.getElementById('tcarPrev');
-    var nextBtn = document.getElementById('tcarNext');
-    var countEl = document.getElementById('tcarCount');
-    var dotsEl = document.getElementById('tcarDots');
-
-    function pad(n) { return (n < 10 ? '0' : '') + n; }
-
-    // build dots
-    for (var i = 0; i < total; i++) {
-      var d = document.createElement('button');
-      d.type = 'button';
-      d.className = 'tcar-dot' + (i === 0 ? ' on' : '');
-      d.setAttribute('aria-label', 'Go to transformation ' + (i + 1));
-      (function(n){ d.addEventListener('click', function(){ go(n); }); })(i);
-      dotsEl.appendChild(d);
-    }
-    // hide dots/nav if only one slide
-    if (total <= 1) { dotsEl.style.display = 'none'; }
-
-    function render() {
-      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-      countEl.textContent = pad(idx + 1) + ' / ' + pad(total);
-      var dots = dotsEl.children;
-      for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.toggle('on', i === idx);
-      }
-      prevBtn.disabled = (idx === 0);
-      nextBtn.disabled = (idx === total - 1);
-    }
-    function go(n) {
-      idx = Math.max(0, Math.min(total - 1, n));
-      render();
-    }
-    prevBtn.addEventListener('click', function(){ go(idx - 1); });
-    nextBtn.addEventListener('click', function(){ go(idx + 1); });
-    render();
-  })();
-
-  // Section tabs — switch panes + remember last tab
-  (function() {
-    var tabs = Array.prototype.slice.call(document.querySelectorAll('.jump'));
-    if (!tabs.length) return;
-    var KEY = 'step5-active-tab';
-
-    function activate(pane, save) {
-      var target = document.getElementById(pane);
-      if (!target) return;
-      tabs.forEach(function(t){ t.classList.toggle('on', t.dataset.pane === pane); });
-      document.querySelectorAll('.ctab-pane').forEach(function(p){ p.classList.toggle('on', p.id === pane); });
-      if (save) {
-        try { localStorage.setItem(KEY, pane); } catch (e) {}
-      }
-    }
-
-    tabs.forEach(function(t) {
-      t.addEventListener('click', function() {
-        activate(t.dataset.pane, true);
-        var wrap = document.querySelector('.jumpbar-wrap');
-        var y = wrap.getBoundingClientRect().top + window.pageYOffset - 8;
-        if (window.pageYOffset > y) window.scrollTo({ top: y, behavior: 'smooth' });
-      });
-    });
-
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (e) {}
-    if (saved && document.getElementById(saved)) activate(saved, false);
-  })();
 </script>
 
 </body>
