@@ -325,8 +325,6 @@
     }
     .vexpand:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
     .module-video.portrait { aspect-ratio: auto; height: 520px; }
-    .module-video.docview { aspect-ratio: auto; height: 620px; background: #fff; }
-    .module-video.docview iframe { width: 100%; height: 100%; }
     .module-video.portrait iframe { width: auto; aspect-ratio: 9 / 16; height: 100%; margin: 0 auto; }
     @media (max-width: 720px) {
       .module-video.portrait { height: auto; aspect-ratio: 9 / 16; max-width: 300px; margin: 0 auto; }
@@ -585,21 +583,6 @@
     }
 
     /* ─── FAQ BLOCK ─── */
-    .step-video{position:relative; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#0f172a 100%); border-radius:20px; overflow:hidden; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; margin:0 0 40px;}
-    .step-video .sv-play{width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.95); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px rgba(0,0,0,0.35);}
-    .step-video .sv-play svg{width:28px; height:28px; fill:#2563EB; margin-left:4px;}
-    .step-video .sv-title{color:white; font-size:18px; font-weight:800; letter-spacing:-0.3px;}
-    .step-video .sv-sub{color:#94a3b8; font-size:13px; font-weight:600;}
-    .step-video iframe, .step-video video{position:absolute; inset:0; width:100%; height:100%; border:0;}
-    .qa{background:white; border:1.5px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:12px; transition:transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;}
-    .qa:last-child{margin-bottom:0;}
-    .qa:hover{transform:translateY(-3px); border-color:#bfdbfe; box-shadow:0 10px 28px rgba(37,99,235,0.10);}
-    .qa.open{border-color:#bfdbfe; box-shadow:0 8px 28px rgba(37,99,235,0.08);}
-    .qa-q{display:flex; align-items:center; gap:14px; padding:20px 22px; cursor:pointer; font-weight:700; font-size:16px; color:var(--navy); background:none; border:none; width:100%; text-align:left; font-family:inherit;}
-    .qa-q .qa-chev{margin-left:auto; width:28px; height:28px; border-radius:8px; background:var(--blue-soft); color:var(--blue); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;}
-    .qa.open .qa-chev{transform:rotate(180deg); background:var(--blue); color:white;}
-    .qa-a{display:none; padding:0 22px 22px 56px; color:var(--mid); font-size:15px; line-height:1.65;}
-    .qa.open .qa-a{display:block;}
     .faq-section { margin-top: 64px; }
     .faq-section .faq-eyebrow {
       font-size: 13px;
@@ -790,8 +773,6 @@
     <a href="step-5.html" class="step-pill done"><span class="num">5</span> Creatives</a>
     <span class="step-divider">›</span>
     <a href="step-6.html" class="step-pill active"><span class="num">6</span> Training</a>
-    <span class="step-divider">›</span>
-    <a href="step-7.html" class="step-pill"><span class="num">7</span> Launch</a>
   </div>
 </div>
 
@@ -799,7 +780,7 @@
 
   <!-- HERO -->
   <div class="training-hero">
-    <div class="step-badge">🎓 Step 6 of 7 — Sales Training</div>
+    <div class="step-badge">🎓 Step 6 of 6 — Sales Training</div>
     <h1>The <span>core training</span> to get you started.</h1>
     <p class="lede">Six short modules covering the fundamentals — how to use the system, work the pipeline, handle messages, run automations, and close more deals. Watch in any order. Add new modules as we build them out.</p>
   </div>
@@ -807,13 +788,6 @@
   <div class="alert yellow admin-only">
     <span class="alert-icon">💡</span>
     <div class="alert-text"><strong>This is your starter library.</strong> We'll add more modules over time — anytime there's a new training video, just hit <strong>+ Add Module</strong> and drop in the Loom link.</div>
-  </div>
-
-  <!-- INSTRUCTIONAL VIDEO -->
-  <div class="step-video">
-    <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-    <div class="sv-title">How to use this training section</div>
-    <div class="sv-sub">Video coming soon — placeholder</div>
   </div>
 
   <!-- COURSE -->
@@ -853,35 +827,9 @@
   <!-- MODULES CONTAINER -->
   <div id="modules-list"></div>
 
-  <!-- FAQ -->
-  <section class="faq-section">
-    <div class="faq-eyebrow">Still got questions?</div>
-    <h2 class="faq-title">Frequently asked questions</h2>
-    <div class="qa">
-      <button class="qa-q" type="button" onclick="toggleQA(this)">Do I need to watch the modules in order?<span class="qa-chev">⌄</span></button>
-      <div class="qa-a">Yes — the modules are numbered 1–4 for a reason. Start with Module 1 (the basics) and work through them in order; each one builds on the last.</div>
-    </div>
-    <div class="qa">
-      <button class="qa-q" type="button" onclick="toggleQA(this)">How long does the training take?<span class="qa-chev">⌄</span></button>
-      <div class="qa-a">About 15 minutes all up. Each module is a short video — watch one whenever you have a spare few minutes and tick it off as you go.</div>
-    </div>
-    <div class="qa">
-      <button class="qa-q" type="button" onclick="toggleQA(this)">Will more modules be added?<span class="qa-chev">⌄</span></button>
-      <div class="qa-a">Yes — this is the starter library. As we build new training videos they'll appear here, so check back after your campaign launches.</div>
-    </div>
-    <div class="qa">
-      <button class="qa-q" type="button" onclick="toggleQA(this)">Who do I ask if I get stuck?<span class="qa-chev">⌄</span></button>
-      <div class="qa-a">Message Aaron or your assigned CSM on WhatsApp — quick questions get quick answers, that's what the group is for.
-        <div style="margin-top:14px;">
-          <a href="https://chat.whatsapp.com/" target="_blank" class="btn btn-green" style="font-size:14px; padding:12px 24px;">💬 Message us on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div class="bottom-nav">
     <a href="step-5.html" class="btn btn-secondary">&larr; Back to Step 5</a>
-    <a href="step-7.html" class="btn btn-primary">Next: Pre-Launch Checklist &rarr;</a>
+    <a href="index.html" class="btn btn-green">✅ All Done — View Overview</a>
   </div>
 </div>
 
@@ -941,8 +889,25 @@
         { t: '1:10', label: 'Drag-and-drop demo' },
         { t: '1:14', label: 'Adding notes & booking appointments' }
       ],
-      loomMobile: 'https://www.loom.com/embed/4dc691a0520f428f9057752d3964c36d', loomDesktop: 'https://www.loom.com/embed/479dd015df1b4ffdafbb17482289d30a',
-      sopUrl: 'https://docs.google.com/document/d/1QVa9qNBle_9w1PsUDpKF2quOeSCPqa1Jdj8PNfH7rc8/edit?tab=t.0'
+      loomMobile: 'https://www.loom.com/embed/dc365075b99f47dfae794fd1a4e2fd85', loomDesktop: 'https://www.loom.com/embed/56013df30d8d4cd197fb134e0ed8b89b'
+    },
+    {
+      id: 'm4',
+      title: 'Messages & Conversations',
+      desc: 'The Conversations tab is your single inbox for every lead reply — SMS, email, the lot. One place to text, reply, and keep every chat in sync with the opportunity card.',
+      keyPoints: [
+        'Hit Conversations → All on the left-hand side to see every lead chat in one place.',
+        'Reply to leads directly from the inbox — no need to jump between phone, email, and CRM.',
+        'Type a message in the chat box, or send via SMS straight from the same window.',
+        'Every conversation is tied back to the lead\'s opportunity card, so context follows the lead.',
+        'Check Conversations daily — it\'s where every active lead is talking to you.'
+      ],
+      chapters: [
+        { t: '0:00', label: 'Where to find Conversations' },
+        { t: '0:14', label: 'Texting a lead from the inbox' },
+        { t: '0:27', label: 'Replying via chat or SMS' }
+      ],
+      loomMobile: 'https://www.loom.com/embed/c32e3dd94bd847e384d7e51cf0672302', loomDesktop: 'https://www.loom.com/embed/6bf6655392b24bd4b88539f92bd88d31'
     },
     {
       id: 'm6',
@@ -1041,11 +1006,10 @@
             <div class="vtoggle">
               <button class="vtoggle-btn ${m.loomDesktop ? '' : 'on'}" onclick="switchVideo('${m.id}','mob',this)" type="button">📱 Mobile</button>
               <button class="vtoggle-btn ${m.loomDesktop ? 'on' : ''}" onclick="switchVideo('${m.id}','desk',this)" type="button">🖥️ Desktop</button>
-              ${m.sopUrl ? `<button class="vtoggle-btn" onclick="switchVideo('${m.id}','sop',this)" type="button">📄 SOP Document</button>` : ''}
             </div>` : `<div class="video-single-label">${m.loomDesktop ? '🖥️ Desktop walkthrough' : '📱 Mobile walkthrough'}</div>`}
             <button class="vexpand" onclick="expandVideo('${m.id}')" type="button">⛶ Expand</button>
           </div>
-          <div class="module-video ${m.loomDesktop ? '' : 'portrait'}" data-mob="${escapeAttr(m.loomMobile || '')}" data-desk="${escapeAttr(m.loomDesktop || '')}" data-sop="${escapeAttr(m.sopUrl || '')}" data-title="${escapeAttr('Module ' + num + ' · ' + m.title)}">
+          <div class="module-video ${m.loomDesktop ? '' : 'portrait'}" data-mob="${escapeAttr(m.loomMobile || '')}" data-desk="${escapeAttr(m.loomDesktop || '')}" data-title="${escapeAttr('Module ' + num + ' · ' + m.title)}">
             <iframe src="${escapeAttr(m.loomDesktop || m.loomMobile)}" allow="autoplay; fullscreen" allowfullscreen></iframe>
           </div>
           ` : `
@@ -1190,28 +1154,17 @@
     return String(str).replace(/"/g, '&quot;');
   }
 
-  // ─── FAQ accordion ──────────────────────────────────────────
-  function toggleQA(btn) {
-    btn.closest('.qa').classList.toggle('open');
-  }
-
   // ─── VIDEO: toggle mobile/desktop + expand ──────────────────
   function switchVideo(mid, mode, btn) {
     var card = document.querySelector('.module[data-module="' + mid + '"]');
     if (!card) return;
     var stage = card.querySelector('.module-video');
     var iframe = stage.querySelector('iframe');
-    var src = mode === 'mob' ? stage.dataset.mob : (mode === 'sop' ? sopPreview(stage.dataset.sop) : stage.dataset.desk);
+    var src = mode === 'mob' ? stage.dataset.mob : stage.dataset.desk;
     if (src && iframe) iframe.src = src;
     stage.classList.toggle('portrait', mode === 'mob');
-    stage.classList.toggle('docview', mode === 'sop');
     card.querySelectorAll('.vtoggle-btn').forEach(function(b) { b.classList.remove('on'); });
     btn.classList.add('on');
-  }
-  function sopPreview(url) {
-    if (!url) return '';
-    var m = url.match(/\/document\/d\/([^\/]+)/);
-    return m ? 'https://docs.google.com/document/d/' + m[1] + '/preview' : url;
   }
   function expandVideo(mid) {
     var card = document.querySelector('.module[data-module="' + mid + '"]');

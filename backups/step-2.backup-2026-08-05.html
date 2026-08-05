@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Step 4: CRM Login | ATMP Onboarding</title>
+  <title>Step 2: Join WhatsApp | ATMP Onboarding</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ─── FAQ BLOCK ─── */
@@ -205,38 +205,7 @@
     @media (max-width: 640px) {
       .faq-tab { font-size: 12px; }
       .faq-pane.on { grid-template-columns: 1fr; }
-      .faq-pane.setup.on { grid-template-columns: none; }
     }
-    /* setup tabs: single-column panes + video placeholder */
-    .faq-pane.setup.on { display: block; }
-    .step-video{position:relative; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#0f172a 100%); border-radius:20px; overflow:hidden; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; margin:22px 0 4px;}
-    .step-video .sv-play{width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.95); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px rgba(0,0,0,0.35);}
-    .step-video .sv-play svg{width:26px; height:26px; fill:#2563EB; margin-left:3px;}
-    .step-video .sv-title{color:white; font-size:17px; font-weight:800; letter-spacing:-0.3px;}
-    .step-video .sv-sub{color:#94a3b8; font-size:13px; font-weight:600;}
-    .step-video iframe, .step-video video{position:absolute; inset:0; width:100%; height:100%; border:0;}
-    /* desktop/mobile sub-toggle */
-    .dm-toggle{display:inline-flex; background:#f1f5f9; padding:5px; border-radius:11px; gap:5px; margin:22px 0 0;}
-    .dm-btn{border:none; background:transparent; font-family:inherit; font-weight:800; font-size:13px; color:var(--mid); padding:9px 18px; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all 0.15s;}
-    .dm-btn.on{background:white; color:var(--navy); box-shadow:0 2px 8px rgba(15,23,42,0.1);}
-    .dm-block{display:none;}
-    .dm-block.on{display:block;}
-    /* screenshot placeholder */
-    .shot-ph{background:var(--bg-soft); border:1.5px dashed #cbd5e1; border-radius:16px; padding:34px 24px; text-align:center; margin:16px 0 4px;}
-    .shot-ph .sp-ic{font-size:30px; margin-bottom:8px;}
-    .shot-ph .sp-t{font-size:15px; font-weight:800; color:var(--navy);}
-    .shot-ph .sp-s{font-size:13px; color:var(--muted); margin-top:4px;}
-    .shot-ph img{width:100%; border-radius:10px; display:block;}
-    /* sign-off tick */
-    .signoff{display:flex; align-items:center; gap:14px; background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:14px; padding:16px 20px; margin-top:24px; cursor:pointer; transition:all 0.15s; user-select:none;}
-    .signoff:hover{transform:translateY(-2px); box-shadow:0 8px 22px rgba(22,163,74,0.12);}
-    .signoff .so-box{width:28px; height:28px; border-radius:8px; border:2px solid #86efac; background:white; display:flex; align-items:center; justify-content:center; font-size:16px; color:white; flex-shrink:0; transition:all 0.15s;}
-    .signoff.done .so-box{background:#16a34a; border-color:#16a34a;}
-    .signoff .so-t{font-size:15px; font-weight:800; color:#15803d;}
-    .signoff .so-s{font-size:13px; color:#4d7c0f; font-weight:600;}
-    .signoff.done .so-t::after{content:" — done!";}
-    .faq-tab .tab-tick{display:none; font-size:13px; color:#16a34a; font-weight:800;}
-    .faq-tab.ticked .tab-tick{display:inline;}
   </style>
 </head>
 <body>
@@ -254,186 +223,52 @@
   <div class="steps-row">
     <a href="step-1.html" class="step-pill done"><span class="num">1</span> Agreement</a>
     <span class="step-divider">›</span>
-    <a href="step-2.html" class="step-pill done"><span class="num">2</span> WhatsApp</a>
+    <a href="step-2.html" class="step-pill active"><span class="num">2</span> WhatsApp</a>
     <span class="step-divider">›</span>
-    <a href="step-3.html" class="step-pill done"><span class="num">3</span> Facebook</a>
+    <a href="step-3.html" class="step-pill"><span class="num">3</span> Facebook</a>
     <span class="step-divider">›</span>
-    <a href="step-4.html" class="step-pill active"><span class="num">4</span> CRM Login</a>
+    <a href="step-4.html" class="step-pill"><span class="num">4</span> CRM Login</a>
     <span class="step-divider">›</span>
     <a href="step-5.html" class="step-pill"><span class="num">5</span> Creatives</a>
     <span class="step-divider">›</span>
     <a href="step-6.html" class="step-pill"><span class="num">6</span> Training</a>
-    <span class="step-divider">›</span>
-    <a href="step-7.html" class="step-pill"><span class="num">7</span> Launch</a>
   </div>
 </div>
 
 <div class="page-wrap">
-  <div class="step-badge">🖥️ Step 4 of 7</div>
-  <h1 class="page-title">Login to Your CRM &<br><span style="color:#2563EB;">Connect Your Calendar</span></h1>
-  <p class="page-subtitle">Your lead management platform is where you'll see every lead, track conversations, and manage your pipeline. Set it up now so it's ready the moment your campaign goes live.</p>
+  <div class="step-badge">💬 Step 2 of 6</div>
+  <h1 class="page-title">Join Our<br><span style="color:#2563EB;">Communication Platform</span></h1>
+  <p class="page-subtitle">Our entire team communicates through WhatsApp. This is how you'll reach Aaron, get campaign updates, and get fast support from our team.</p>
 
-  <div class="faq-card" style="margin-top:8px;">
-    <div class="faq-tabs">
-      <button class="faq-tab on" type="button" data-pane="setup-login"><span class="faq-ti">🔑</span>Login to CRM<span class="faq-tc">Credentials + video</span><span class="tab-tick">✓ Done</span></button>
-      <button class="faq-tab" type="button" data-pane="setup-calendar"><span class="faq-ti">📅</span>Connect Calendar<span class="faq-tc">Google sync + video</span><span class="tab-tick">✓ Done</span></button>
-      <button class="faq-tab" type="button" data-pane="setup-email"><span class="faq-ti">📧</span>Check Your Email<span class="faq-tc">Credentials arrive here</span><span class="tab-tick">✓ Done</span></button>
-    </div>
-
-    <div class="faq-pane setup on" id="setup-login">
-      <p style="margin-bottom:20px; font-size:15px; color:#64748b;">Your personalised credentials will be emailed to you. Use the details below as a reference — your email address will be used as the username.</p>
-      <div class="cred-box">
-        <div class="cred-title">Platform Login</div>
-        <div class="cred-row">
-          <span class="cred-label">Platform</span>
-          <span class="cred-value">GoHighLevel CRM</span>
-        </div>
-        <div class="cred-row">
-          <span class="cred-label">Login URL</span>
-          <span class="cred-value">app.gohighlevel.com</span>
-        </div>
-        <div class="cred-row">
-          <span class="cred-label">Username</span>
-          <span class="cred-value">Your email address</span>
-        </div>
-        <div class="cred-row">
-          <span class="cred-label">Password</span>
-          <span class="cred-value">Sent via email</span>
-        </div>
-      </div>
-      <div class="dm-toggle">
-        <button class="dm-btn on" type="button" onclick="dmSwitch(this,'login-desktop')">🖥️ Desktop</button>
-        <button class="dm-btn" type="button" onclick="dmSwitch(this,'login-mobile')">📱 Mobile</button>
-      </div>
-      <div class="dm-block on" id="login-desktop">
-        <div class="step-video">
-          <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-          <div class="sv-title">How to log in — desktop</div>
-          <div class="sv-sub">Video coming soon — placeholder</div>
-        </div>
-        <div class="shot-ph">
-          <div class="sp-ic">🖼️</div>
-          <div class="sp-t">Screenshot — desktop login screen</div>
-          <div class="sp-s">Example of what the CRM login page looks like on desktop</div>
-        </div>
-      </div>
-      <div class="dm-block" id="login-mobile">
-        <div class="step-video">
-          <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-          <div class="sv-title">How to log in — mobile</div>
-          <div class="sv-sub">Video coming soon — placeholder</div>
-        </div>
-        <div class="shot-ph">
-          <div class="sp-ic">🖼️</div>
-          <div class="sp-t">Screenshot — mobile app login</div>
-          <div class="sp-s">Example of what the LeadConnector mobile app login looks like</div>
-        </div>
-      </div>
-      <div class="signoff" data-signoff="login" onclick="toggleSignoff(this)">
-        <div class="so-box">✓</div>
-        <div>
-          <div class="so-t">I've watched this and logged in to the CRM</div>
-          <div class="so-s">Tick to sign off this step</div>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:24px;">
-        <a href="https://app.gohighlevel.com" target="_blank" class="btn btn-primary" style="font-size:17px; padding:18px 40px;">
-          🖥️ Login to CRM Platform
-        </a>
-      </div>
-    </div>
-
-    <div class="faq-pane setup" id="setup-calendar">
-      <p style="margin-bottom:16px;">Once logged in, connect your Google Account so we can book leads directly onto your calendar.</p>
-      <ul class="checklist">
-        <li>Log in to the CRM platform</li>
-        <li><span>Go to <strong>Settings &rarr; Integrations</strong></span></li>
-        <li><span>Click <strong>"Sign in with Google"</strong></span></li>
-        <li>Authorise the connection with your Google account</li>
-      </ul>
-      <div class="dm-toggle">
-        <button class="dm-btn on" type="button" onclick="dmSwitch(this,'cal-desktop')">🖥️ Desktop</button>
-        <button class="dm-btn" type="button" onclick="dmSwitch(this,'cal-mobile')">📱 Mobile</button>
-      </div>
-      <div class="dm-block on" id="cal-desktop">
-        <div class="step-video">
-          <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-          <div class="sv-title">How to connect your calendar — desktop</div>
-          <div class="sv-sub">Video coming soon — placeholder</div>
-        </div>
-        <div class="shot-ph">
-          <div class="sp-ic">🖼️</div>
-          <div class="sp-t">Screenshot — calendar connection screen</div>
-          <div class="sp-s">Example of Settings → Integrations → Sign in with Google on desktop</div>
-        </div>
-      </div>
-      <div class="dm-block" id="cal-mobile">
-        <div class="step-video">
-          <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-          <div class="sv-title">How to connect your calendar — mobile</div>
-          <div class="sv-sub">Video coming soon — placeholder</div>
-        </div>
-        <div class="shot-ph">
-          <div class="sp-ic">🖼️</div>
-          <div class="sp-t">Screenshot — calendar connection on mobile</div>
-          <div class="sp-s">Example of the same steps in the mobile app</div>
-        </div>
-      </div>
-      <div class="signoff" data-signoff="calendar" onclick="toggleSignoff(this)">
-        <div class="so-box">✓</div>
-        <div>
-          <div class="so-t">I've watched this and connected my calendar</div>
-          <div class="so-s">Tick to sign off this step</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="faq-pane setup" id="setup-email">
-      <div class="alert blue" style="margin-bottom:0;">
-        <span class="alert-icon">📧</span>
-        <div class="alert-text"><strong>Check your email.</strong> After submitting your onboarding form, you'll receive a separate email with your personalised login credentials for the CRM platform. Can't find it? Check your spam or junk folder.</div>
-      </div>
-      <div class="dm-toggle">
-        <button class="dm-btn on" type="button" onclick="dmSwitch(this,'email-desktop')">🖥️ Desktop</button>
-        <button class="dm-btn" type="button" onclick="dmSwitch(this,'email-mobile')">📱 Mobile</button>
-      </div>
-      <div class="dm-block on" id="email-desktop">
-        <div class="step-video">
-          <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-          <div class="sv-title">How to check &amp; access your email — desktop</div>
-          <div class="sv-sub">Video coming soon — placeholder</div>
-        </div>
-        <div class="shot-ph">
-          <div class="sp-ic">🖼️</div>
-          <div class="sp-t">Screenshot — what the credentials email looks like</div>
-          <div class="sp-s">Example of the email with your login details, viewed on desktop</div>
-        </div>
-      </div>
-      <div class="dm-block" id="email-mobile">
-        <div class="step-video">
-          <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-          <div class="sv-title">How to check &amp; access your email — mobile</div>
-          <div class="sv-sub">Video coming soon — placeholder</div>
-        </div>
-        <div class="shot-ph">
-          <div class="sp-ic">🖼️</div>
-          <div class="sp-t">Screenshot — the credentials email on mobile</div>
-          <div class="sp-s">Example of the same email opened on a phone</div>
-        </div>
-      </div>
-      <div class="signoff" data-signoff="email" onclick="toggleSignoff(this)">
-        <div class="so-box">✓</div>
-        <div>
-          <div class="so-t">I've watched this and found my credentials email</div>
-          <div class="so-s">Tick to sign off this step</div>
-        </div>
-      </div>
-    </div>
+  <div class="alert blue">
+    <span class="alert-icon">💡</span>
+    <div class="alert-text"><strong>Why WhatsApp?</strong> It keeps all communication in one place, ensures fast response times, and means you'll always have a direct line to your success coach and the full ATMP support team.</div>
   </div>
 
-  <div class="alert yellow">
-    <span class="alert-icon">💡</span>
-    <div class="alert-text"><strong>Using a different booking system?</strong> If you use an external CRM or booking platform (e.g. Calendly, ServiceM8, Tradify), don't worry — we'll discuss the best integration approach on your onboarding call.</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">📱</span> What you need to do</div>
+    <ul class="checklist">
+      <li>Download WhatsApp on your phone and/or desktop if you haven't already</li>
+      <li>Click the button below to join the ATMP communication group</li>
+      <li>Introduce yourself so the team knows you're in</li>
+      <li>Make sure at least one other member of your staff is also added</li>
+    </ul>
+  </div>
+
+  <div style="text-align:center; margin: 40px 0;">
+    <a href="https://chat.whatsapp.com/" target="_blank" class="btn btn-green" style="font-size:17px; padding:18px 40px;">
+      💬 Join Communication Platform
+    </a>
+    <p style="margin-top:14px; font-size:14px; color:#94a3b8;">Opens WhatsApp — desktop or mobile app recommended</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="card-icon">👥</span> Who you'll have access to</div>
+    <ul class="checklist">
+      <li>Aaron Tang — Founder &amp; your primary success coach</li>
+      <li>The ATMP support team for campaign updates and questions</li>
+      <li>Fast response times during business hours</li>
+    </ul>
   </div>
 
   <!-- FAQ -->
@@ -601,8 +436,8 @@
   </div>
 
   <div class="bottom-nav">
-    <a href="step-3.html" class="btn btn-secondary">&larr; Back to Step 3</a>
-    <a href="step-5.html" class="btn btn-primary">CRM Connected — Creatives Next &rarr;</a>
+    <a href="step-1.html" class="btn btn-secondary">&larr; Back to Step 1</a>
+    <a href="step-3.html" class="btn btn-primary">Joined WhatsApp — Next Step &rarr;</a>
   </div>
 </div>
 
@@ -611,41 +446,6 @@
 </footer>
 
 <script>
-  // Desktop/Mobile sub-toggle
-  function dmSwitch(btn, blockId) {
-    var pane = btn.closest('.faq-pane');
-    pane.querySelectorAll('.dm-btn').forEach(function(b){ b.classList.remove('on'); });
-    btn.classList.add('on');
-    pane.querySelectorAll('.dm-block').forEach(function(b){ b.classList.remove('on'); });
-    document.getElementById(blockId).classList.add('on');
-  }
-
-  // Sign-off ticks (persisted)
-  var SIGNOFF_KEY = 'atmp_step4_signoff';
-  function loadSignoffs() {
-    try { return JSON.parse(localStorage.getItem(SIGNOFF_KEY)) || {}; } catch (e) { return {}; }
-  }
-  function applySignoffs() {
-    var s = loadSignoffs();
-    document.querySelectorAll('.signoff').forEach(function(el) {
-      var k = el.dataset.signoff;
-      el.classList.toggle('done', !!s[k]);
-    });
-    var paneFor = { login: 'setup-login', calendar: 'setup-calendar', email: 'setup-email' };
-    Object.keys(paneFor).forEach(function(k) {
-      var tab = document.querySelector('.faq-tab[data-pane="' + paneFor[k] + '"]');
-      if (tab) tab.classList.toggle('ticked', !!s[k]);
-    });
-  }
-  function toggleSignoff(el) {
-    var s = loadSignoffs();
-    var k = el.dataset.signoff;
-    s[k] = !s[k];
-    try { localStorage.setItem(SIGNOFF_KEY, JSON.stringify(s)); } catch (e) {}
-    applySignoffs();
-  }
-  applySignoffs();
-
   function openVid(card) {
     var loom = card.getAttribute('data-loom');
     var ansId = card.getAttribute('data-answer');
@@ -682,5 +482,6 @@
     });
   });
 </script>
+
 </body>
 </html>

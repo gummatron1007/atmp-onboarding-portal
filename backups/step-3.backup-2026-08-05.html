@@ -30,16 +30,6 @@
       font-family: inherit;
     }
     .tab-btn:last-child { border-right: none; }
-    .tab-btn .tab-tick{display:none; font-size:11px; font-weight:800; color:#16a34a; margin-left:6px;}
-    .tab-btn.ticked .tab-tick{display:inline;}
-    .tab-btn.active .tab-tick{color:#bbf7d0;}
-    .signoff{display:flex; align-items:center; gap:14px; background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:14px; padding:16px 20px; margin-top:24px; cursor:pointer; transition:all 0.15s; user-select:none;}
-    .signoff:hover{transform:translateY(-2px); box-shadow:0 8px 22px rgba(22,163,74,0.12);}
-    .signoff .so-box{width:28px; height:28px; border-radius:8px; border:2px solid #86efac; background:white; display:flex; align-items:center; justify-content:center; font-size:16px; color:white; flex-shrink:0; transition:all 0.15s;}
-    .signoff.done .so-box{background:#16a34a; border-color:#16a34a;}
-    .signoff .so-t{font-size:15px; font-weight:800; color:#15803d;}
-    .signoff .so-s{font-size:13px; color:#4d7c0f; font-weight:600;}
-    .signoff.done .so-t::after{content:" — done!";}
     .tab-btn.active {
       background: #2563EB;
       color: white;
@@ -66,12 +56,6 @@
       box-shadow: 0 18px 50px rgba(15,23,42,0.16);
     }
     .leadsie-wrap { max-width: 760px; margin-left: auto; margin-right: auto; }
-    .step-video{position:relative; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#0f172a 100%); border-radius:20px; overflow:hidden; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; max-width:640px; margin:24px auto;}
-    .step-video .sv-play{width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.95); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px rgba(0,0,0,0.35);}
-    .step-video .sv-play svg{width:26px; height:26px; fill:#2563EB; margin-left:3px;}
-    .step-video .sv-title{color:white; font-size:17px; font-weight:800; letter-spacing:-0.3px;}
-    .step-video .sv-sub{color:#94a3b8; font-size:13px; font-weight:600;}
-    .step-video iframe, .step-video video{position:absolute; inset:0; width:100%; height:100%; border:0;}
 
     /* Phone-only: keep the 3-tab row but size it to fit (desktop/tablet unchanged) */
     @media (max-width: 600px) {
@@ -115,13 +99,11 @@
     <a href="step-5.html" class="step-pill"><span class="num">5</span> Creatives</a>
     <span class="step-divider">›</span>
     <a href="step-6.html" class="step-pill"><span class="num">6</span> Training</a>
-    <span class="step-divider">›</span>
-    <a href="step-7.html" class="step-pill"><span class="num">7</span> Launch</a>
   </div>
 </div>
 
 <div class="page-wrap">
-  <div class="step-badge">📘 Step 3 of 7</div>
+  <div class="step-badge">📘 Step 3 of 6</div>
   <h1 class="page-title">Facebook Page &<br><span style="color:#2563EB;">Ad Account Setup</span></h1>
   <p class="page-subtitle">This step has three parts. Watch each video and follow along — it takes about 10 minutes total. If you already have a Business Manager and Ad Account, skip to Part 3.</p>
 
@@ -131,17 +113,17 @@
   </div>
 
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="showTab('tab1', this)" data-tab="tab1">
+    <button class="tab-btn active" onclick="showTab('tab1', this)">
       <span class="tab-num">Part 1</span>
-      Business Portfolio Setup<span class="tab-tick">✓</span>
+      Business Portfolio Setup
     </button>
-    <button class="tab-btn" onclick="showTab('tab2', this)" data-tab="tab2">
+    <button class="tab-btn" onclick="showTab('tab2', this)">
       <span class="tab-num">Part 2</span>
-      Ad Account Setup<span class="tab-tick">✓</span>
+      Ad Account Setup
     </button>
-    <button class="tab-btn" onclick="showTab('tab3', this)" data-tab="tab3">
+    <button class="tab-btn" onclick="showTab('tab3', this)">
       <span class="tab-num">Part 3</span>
-      Give Us Access<span class="tab-tick">✓</span>
+      Give Us Access
     </button>
   </div>
 
@@ -158,12 +140,10 @@
         <li>Connecting your Facebook Page to the Business Manager</li>
       </ul>
     </div>
-    <div class="signoff" data-signoff="tab1" onclick="toggleSignoff(this)">
-      <div class="so-box">✓</div>
-      <div>
-        <div class="so-t">I've completed my Business Portfolio setup</div>
-        <div class="so-s">Tick to sign off Part 1</div>
-      </div>
+    <div class="card">
+      <div class="card-title"><span class="card-icon">📄</span> Resources &amp; Downloads</div>
+      <p style="margin-bottom:20px;">Download the step-by-step Facebook setup guide to follow along:</p>
+      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" class="btn btn-secondary">📄 Facebook Set Up Document</a>
     </div>
     <div style="text-align:right; margin-top:28px;">
       <button class="btn btn-primary" onclick="showTab('tab2', document.querySelectorAll('.tab-btn')[1])">Next: Ad Account Setup &rarr;</button>
@@ -184,23 +164,9 @@
       </ul>
     </div>
     <div class="card">
-      <div class="card-title"><span class="card-icon">💳</span> Add a Payment Method</div>
-      <ul class="checklist">
-        <li><span>In <strong>Business Settings</strong>, go to the sidebar and find <strong>Payment Methods</strong></span></li>
-        <li><span>Click <strong>Add Payment Method</strong> and input your credit/debit card information</span></li>
-      </ul>
-      <div class="step-video">
-        <div class="sv-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
-        <div class="sv-title">How to add a payment method</div>
-        <div class="sv-sub">Video coming soon — placeholder</div>
-      </div>
-    </div>
-    <div class="signoff" data-signoff="tab2" onclick="toggleSignoff(this)">
-      <div class="so-box">✓</div>
-      <div>
-        <div class="so-t">I've set up my Ad Account and added a payment method</div>
-        <div class="so-s">Tick to sign off Part 2</div>
-      </div>
+      <div class="card-title"><span class="card-icon">📄</span> Resources &amp; Downloads</div>
+      <p style="margin-bottom:20px;">Same setup guide applies — refer to the Facebook Ad Account section:</p>
+      <a href="https://docs.google.com/document/d/1K_qYvM6yyHeQMuQs2L3QGGXPVKpelwWrtNnUlQc3B9w/edit?usp=sharing" target="_blank" class="btn btn-secondary">📄 Facebook Set Up Document</a>
     </div>
     <div style="display:flex; justify-content:space-between; margin-top:28px;">
       <button class="btn btn-secondary" onclick="showTab('tab1', document.querySelectorAll('.tab-btn')[0])">&larr; Back</button>
@@ -231,13 +197,6 @@
       <iframe src="https://app.leadsie.com/embed/connect/at-media-partners/manage" allowfullscreen></iframe>
     </div>
 
-    <div class="signoff" data-signoff="tab3" onclick="toggleSignoff(this)">
-      <div class="so-box">✓</div>
-      <div>
-        <div class="so-t">I've connected my Facebook and given ATMP access</div>
-        <div class="so-s">Tick to sign off Part 3</div>
-      </div>
-    </div>
     <div style="display:flex; justify-content:space-between; margin-top:28px;">
       <button class="btn btn-secondary" onclick="showTab('tab2', document.querySelectorAll('.tab-btn')[1])">&larr; Back</button>
       <a href="step-4.html" class="btn btn-primary">Access Given — Next Step &rarr;</a>
@@ -261,28 +220,6 @@ function showTab(id, btn) {
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
-
-// Sign-off ticks (persisted)
-var SIGNOFF_KEY = 'atmp_step3_signoff';
-function loadSignoffs() {
-  try { return JSON.parse(localStorage.getItem(SIGNOFF_KEY)) || {}; } catch (e) { return {}; }
-}
-function applySignoffs() {
-  var s = loadSignoffs();
-  document.querySelectorAll('.signoff').forEach(function(el) {
-    el.classList.toggle('done', !!s[el.dataset.signoff]);
-  });
-  document.querySelectorAll('.tab-btn[data-tab]').forEach(function(tab) {
-    tab.classList.toggle('ticked', !!s[tab.dataset.tab]);
-  });
-}
-function toggleSignoff(el) {
-  var s = loadSignoffs();
-  s[el.dataset.signoff] = !s[el.dataset.signoff];
-  try { localStorage.setItem(SIGNOFF_KEY, JSON.stringify(s)); } catch (e) {}
-  applySignoffs();
-}
-applySignoffs();
 </script>
 
 </body>
