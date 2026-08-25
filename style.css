@@ -1,18 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --blue: #2563EB;
-  --blue-dark: #1d4ed8;
-  --navy: #0f172a;
-  --slate: #1e293b;
+  --blue: #00B4B4;
+  --blue-dark: #009E9E;
+  --navy: #1B2A4A;
+  --slate: #22345C;
   --mid: #475569;
   --muted: #94a3b8;
   --border: #e2e8f0;
   --bg: #ffffff;
   --bg-soft: #f8fafc;
-  --green: #16a34a;
+  --green: #0F9058;
   --radius: 16px;
   --radius-sm: 10px;
 }
@@ -20,7 +18,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   background: var(--bg);
   color: var(--navy);
   font-size: 17px;
@@ -113,7 +111,7 @@ nav {
   background: var(--blue);
   color: white;
   border-color: var(--blue);
-  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+  box-shadow: 0 4px 14px rgba(0,180,180,0.3);
 }
 
 .step-pill.active .num {
@@ -122,13 +120,13 @@ nav {
 }
 
 .step-pill.done {
-  background: #f0fdf4;
+  background: #EEF9F3;
   color: var(--green);
-  border-color: #bbf7d0;
+  border-color: #C9EBDA;
 }
 
 .step-pill.done .num {
-  background: #bbf7d0;
+  background: #C9EBDA;
   color: var(--green);
 }
 
@@ -150,7 +148,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #eff6ff;
+  background: #EAF7F7;
   color: var(--blue);
   font-size: 12px;
   font-weight: 800;
@@ -159,7 +157,7 @@ nav {
   padding: 8px 18px;
   border-radius: 100px;
   margin-bottom: 28px;
-  border: 1.5px solid #bfdbfe;
+  border: 1.5px solid #B3E8E6;
 }
 
 /* ─── PAGE TITLE — hero-scale like atmediapartners.com ─── */
@@ -229,7 +227,7 @@ h1.page-title span { color: var(--blue); }
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: #eff6ff;
+  background: #EAF7F7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,10 +267,10 @@ h1.page-title span { color: var(--blue); }
   width: 24px;
   height: 24px;
   min-width: 24px;
-  background: #f0fdf4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/14px no-repeat;
+  background: #EEF9F3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/14px no-repeat;
   border-radius: 50%;
   margin-top: 2px;
-  border: 1.5px solid #bbf7d0;
+  border: 1.5px solid #C9EBDA;
 }
 
 /* ─── ALERTS ─── */
@@ -291,9 +289,9 @@ h1.page-title span { color: var(--blue); }
 .alert-text { color: inherit; }
 .alert-text strong { font-weight: 800; }
 
-.alert.blue  { background: #eff6ff; border: 1.5px solid #bfdbfe; color: #1e40af; }
-.alert.yellow{ background: #fffbeb; border: 1.5px solid #fde68a; color: #92400e; }
-.alert.green { background: #f0fdf4; border: 1.5px solid #bbf7d0; color: #14532d; }
+.alert.blue  { background: #EAF7F7; border: 1.5px solid #B3E8E6; color: #0d6e6e; }
+.alert.yellow{ background: #FBF1DE; border: 1.5px solid #EFC978; color: #7C4A0A; }
+.alert.green { background: #EEF9F3; border: 1.5px solid #C9EBDA; color: #0A5A36; }
 
 /* ─── BUTTONS ─── */
 .btn {
@@ -315,12 +313,12 @@ h1.page-title span { color: var(--blue); }
 .btn-primary {
   background: var(--blue);
   color: white;
-  box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+  box-shadow: 0 4px 16px rgba(0,180,180,0.35);
 }
 .btn-primary:hover {
   background: var(--blue-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(37,99,235,0.45);
+  box-shadow: 0 8px 28px rgba(0,180,180,0.45);
 }
 
 .btn-secondary {
@@ -331,7 +329,7 @@ h1.page-title span { color: var(--blue); }
 .btn-secondary:hover {
   border-color: var(--blue);
   color: var(--blue);
-  background: #eff6ff;
+  background: #EAF7F7;
 }
 
 .btn-green {
@@ -340,7 +338,7 @@ h1.page-title span { color: var(--blue); }
   box-shadow: 0 4px 16px rgba(22,163,74,0.3);
 }
 .btn-green:hover {
-  background: #15803d;
+  background: #0C6F42;
   transform: translateY(-2px);
 }
 
