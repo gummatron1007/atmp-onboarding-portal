@@ -470,3 +470,68 @@
     });
   });
 })();
+
+/* ─── VIDEO SPEED ──────────────────────────────────────────────────────
+   These are walkthroughs, not entertainment — most people watch them
+   faster than real time, so 1.25x is the default and 1x / 1.5x are one
+   tap away. The choice is remembered across all three pages.
+
+   playbackRate is a property of the media element, not the file, and it
+   resets to 1 every time a new source loads. The phone/desktop toggle
+   swaps src and calls load(), so the rate has to be re-asserted on
+   loadedmetadata rather than set once at startup.                      */
+(function(){
+  var RATES=[1,1.25,1.5], KEY='atmp-video-rate', FALLBACK=1.25;
+
+  function stored(){
+    try{
+      var v=parseFloat(localStorage.getItem(KEY));
+      return RATES.indexOf(v)>-1?v:FALLBACK;
+    }catch(e){ return FALLBACK; }   /* private mode / storage blocked */
+  }
+  var rate=stored();
+
+  function apply(){
+    [].forEach.call(document.querySelectorAll('video'),function(v){
+      if(v.playbackRate!==rate) v.playbackRate=rate;
+    });
+    [].forEach.call(document.querySelectorAll('.spd button'),function(b){
+      b.classList.toggle('on',parseFloat(b.getAttribute('data-r'))===rate);
+    });
+  }
+
+  function set(r){
+    rate=r;
+    try{ localStorage.setItem(KEY,String(r)); }catch(e){}
+    apply();
+  }
+
+  function control(){
+    var d=document.createElement('div');
+    d.className='spd';
+    d.innerHTML='<span class="spd-lbl">Speed</span>'+RATES.map(function(r){
+      return '<button type="button" data-r="'+r+'">'+r+'×</button>';
+    }).join('');
+    d.addEventListener('click',function(e){
+      var b=e.target&&e.target.closest?e.target.closest('button'):null;
+      if(b) set(parseFloat(b.getAttribute('data-r')));
+    });
+    return d;
+  }
+
+  function init(){
+    [].forEach.call(document.querySelectorAll('video'),function(v){
+      var box=v.closest('.video-block, .embed')||v;
+      var next=box.nextElementSibling;
+      if(!next||!next.classList.contains('spd')){
+        box.parentNode.insertBefore(control(),box.nextSibling);
+      }
+      v.addEventListener('loadedmetadata',function(){ v.playbackRate=rate; });
+      v.addEventListener('play',function(){ v.playbackRate=rate; });
+    });
+    apply();
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();

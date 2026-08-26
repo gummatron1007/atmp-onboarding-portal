@@ -533,3 +533,11 @@ h1.page-title span{color:var(--blue)}
 
 /* label must sit above the completion gradient (text nodes can't take z-index) */
 .proof-btn .lbl,.sub-tick .lbl{position:relative;z-index:2}
+
+/* ─── VIDEO SPEED CONTROL ─── */
+.spd{display:flex;align-items:center;gap:6px;margin:-6px 0 18px;font-size:12px;font-weight:700;color:var(--muted);flex-wrap:wrap}
+.spd .spd-lbl{margin-right:2px;text-transform:uppercase;letter-spacing:.04em}
+.spd button{border:1.5px solid var(--border);background:#fff;color:var(--mid);border-radius:999px;padding:4px 12px;font:inherit;font-weight:700;cursor:pointer;line-height:1.7;transition:all .12s}
+.spd button:hover{border-color:var(--blue);color:var(--blue)}
+.spd button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.embed video{position:absolute;inset:0;width:100%;height:100%;border:0}
