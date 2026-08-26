@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | AT Media Partners Onboarding</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #1B2A4A 0%, #22345C 60%, #1B2A4A 100%);
+      padding: 100px 56px 96px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0,180,180,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,180,0.2);
+      border: 1.5px solid rgba(0,180,180,0.4);
+      color: #5EEAE0;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+      line-height: 1.05;
+    }
+    .hero h1 span { color: #5EEAE0; }
+    .hero p {
+      font-size: 20px;
+      color: #94a3b8;
+      max-width: 580px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .steps-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 72px 56px;
+    }
+    .overview-card {
+      background: white;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      transition: all 0.25s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .overview-card:hover {
+      border-color: #00B4B4;
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,180,180,0.14);
+    }
+    .overview-card .oc-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .overview-card .oc-num {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #00B4B4;
+      margin-bottom: 8px;
+    }
+    .overview-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1B2A4A;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .overview-card p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .overview-card .oc-time {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+      background: #f1f5f9;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .start-section {
+      text-align: center;
+      padding: 0 56px 96px;
+    }
+    .start-section h2 {
+      font-size: 36px;
+      font-weight: 900;
+      color: #1B2A4A;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+    .start-section p {
+      color: #64748b;
+      margin-bottom: 32px;
+      font-size: 18px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fef9c3;
+      color: #854d0e;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      border: 1.5px solid #EFC978;
+    }
+    @media (max-width: 768px) {
+      .hero { padding: 64px 24px 72px; }
+      .hero h1 { font-size: 40px; }
+      .steps-overview { padding: 48px 24px; }
+      .start-section { padding: 0 24px 64px; }
+      .start-section h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="../assets/atmp-logo-new.png" alt="AT Media Partners" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+    <span style="display:none; font-size:20px; font-weight:900; color:#1B2A4A; letter-spacing:-0.5px;">ATMP<span style="color:#00B4B4;">.</span></span>
+  </a>
+  <span class="nav-right">Client Onboarding Portal</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">🚀 Welcome to AT Media Partners</div>
+  <h1>Let's Get You <span>Up & Running</span></h1>
+  <p>Complete these 6 steps before your onboarding call and we'll be ready to launch your campaign immediately.</p>
+  <a href="step-1.html" class="btn btn-primary" style="font-size:17px; padding:18px 40px;">Start Onboarding &rarr;</a>
+</div>
+
+<div class="steps-overview">
+  <a href="step-1.html" class="overview-card">
+    <span class="oc-icon">📝</span>
+    <div class="oc-num">Step 1</div>
+    <h3>Sign The Agreement</h3>
+    <p>Review and sign your scope of service agreement via Ignition.</p>
+    <span class="oc-time">⏱ 5 mins</span>
+  </a>
+  <a href="step-2.html" class="overview-card">
+    <span class="oc-icon">💬</span>
+    <div class="oc-num">Step 2</div>
+    <h3>Join WhatsApp</h3>
+    <p>Connect with your success coach and the ATMP support team.</p>
+    <span class="oc-time">⏱ 2 mins</span>
+  </a>
+  <a href="step-3.html" class="overview-card">
+    <span class="oc-icon">📘</span>
+    <div class="oc-num">Step 3</div>
+    <h3>Facebook Setup</h3>
+    <p>Set up your Business Manager, Ad Account, and give us access.</p>
+    <span class="oc-time">⏱ 10 mins</span>
+  </a>
+  <a href="step-4.html" class="overview-card">
+    <span class="oc-icon">🖥️</span>
+    <div class="oc-num">Step 4</div>
+    <h3>Login to CRM</h3>
+    <p>Access your lead management platform and connect your calendar.</p>
+    <span class="oc-time">⏱ 5 mins</span>
+  </a>
+  <a href="step-5.html" class="overview-card">
+    <span class="oc-icon">🎨</span>
+    <div class="oc-num">Step 5</div>
+    <h3>Creative Assets</h3>
+    <p>What we need from you, what we turn it into, and why it works.</p>
+    <span class="oc-time">⏱ 10 mins</span>
+  </a>
+  <a href="step-6.html" class="overview-card">
+    <span class="oc-icon">🎓</span>
+    <div class="oc-num">Step 6</div>
+    <h3>Sales Training</h3>
+    <p>Access our proven frameworks to maximise your close rate.</p>
+    <span class="oc-time">⏱ 15 mins</span>
+  </a>
+  <a href="step-7.html" class="overview-card">
+    <span class="oc-icon">🚀</span>
+    <div class="oc-num">Step 7</div>
+    <h3>Pre-Launch Checklist</h3>
+    <p>Tick off the final eight items and we're cleared for launch.</p>
+    <span class="oc-time">⏱ 2 mins</span>
+  </a>
+</div>
+
+<div class="start-section">
+  <div class="time-badge">⏱ Total time: approximately 40–50 minutes</div>
+  <h2>Complete all steps before your onboarding call</h2>
+  <p>Your success coach Aaron will walk you through everything on the call. The more you complete beforehand, the faster we can launch.</p>
+  <a href="step-1.html" class="btn btn-primary" style="font-size:17px; padding:18px 40px;">Begin Step 1 &rarr;</a>
+</div>
+
+<footer>
+  <p>AT Media Partners &mdash; <a href="https://atmediapartners.com">atmediapartners.com</a></p>
+</footer>
+
+</body>
+</html>
