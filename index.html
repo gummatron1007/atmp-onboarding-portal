@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 1: Welcome | ATMP Onboarding</title>
+<title>Welcome | ATMP Onboarding</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="p1">
+<body data-page="p1" data-journey="00">
 
 <nav>
   <a href="index.html" class="nav-logo">
@@ -16,95 +16,19 @@
   <span class="nav-right">Client Onboarding Portal</span>
 </nav>
 
-<div class="tracker">
-  <div class="tk-top">
-    <div class="tk-where">Welcome <em>— Page 1 of 3</em></div>
-    <div class="tk-count" id="tkCount">0 of 2 done</div>
-  </div>
-  <div class="tk-track"><div class="tk-fill" id="tkFill"></div></div>
-  <div class="tk-next" id="tkNext"></div>
-  <div class="tk-pages">
-    <a href="index.html" class="tk-pg on" data-pageid="p1" data-total="2"><span class="d"></span>Welcome</a>
-    <a href="page-2-onboarding-call.html" class="tk-pg" data-pageid="p2" data-total="4"><span class="d"></span>Onboarding call</a>
-    <a href="page-3-launch-call.html" class="tk-pg" data-pageid="p3" data-total="5"><span class="d"></span>Launch call</a>
-  </div>
-</div>
-
-<div class="page-wrap">
-  <div class="step-badge">👋 Page 1 of 3 — Start here</div>
-  <h1 class="page-title">Welcome to <span>AT Media Partners</span></h1>
-  <p class="page-subtitle">You've officially partnered with AT Media Partners. Work through these three pages before your calls — about 40 minutes all up — and we'll be ready to launch your campaign immediately.</p>
+<div class="sp" style="max-width:820px">
+  <div class="sp-badge">👋 Start here</div>
+  <h1 class="sp-h">Welcome to <span>AT Media Partners</span></h1>
+  <p class="sp-s">You've officially partnered with AT Media Partners. Here's your whole journey — nine short steps and two calls, then you're live. About 40 minutes all up.</p>
 
   <div class="video-block has-video"><video controls preload="metadata" playsinline title="Founder welcome" style="width:100%;height:100%;border-radius:inherit;background:#000;"><source src="assets/videos/1welcomevideo.mp4" type="video/mp4">Your browser cannot play this video. <a href="assets/videos/1welcomevideo.mp4">Download it instead</a>.</video></div>
-  <div class="video-caption">Watch this first. Everything else on this page follows it.</div>
+  <div class="video-caption">Watch this first. Aaron walks you through what happens next and what we'll need from you.</div>
 
-  <div class="steps">
-
-    <div class="step" data-step="p1s1" data-short="Watch the video" data-proof="confirm" data-proof-cta="I've watched it" data-proof-hint="No upload needed — just confirm you've watched the video." data-proof-done="Video watched">
-      <div class="step-head">
-        <div class="step-num">1</div>
-        <div class="step-titles">
-          <div class="step-title">Watch the welcome video</div>
-          <div class="step-what">About 3 minutes</div>
-        </div>
-      </div>
-      <div class="step-body">
-        <p class="caption">Aaron walks you through what happens next and what we'll need from you.</p>
-        <div class="action-row">
-          <div class="proof-slot"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="step" data-step="p1s2" data-short="Know your 3 calls" data-proof="confirm" data-proof-cta="Got it" data-proof-hint="No upload needed — just confirm you understand the three calls." data-proof-done="Understood">
-      <div class="step-head">
-        <div class="step-num">2</div>
-        <div class="step-titles">
-          <div class="step-title">Know your three calls</div>
-                  </div>
-      </div>
-      <div class="step-body">
-        <p class="caption">You have three calls with us. Each one has a short list of things to do before it.</p>
-        <div class="roadmap">
-          <div class="rm-stop">
-            <div class="rm-icon">📞</div>
-            <div class="rm-num">Call 1</div>
-            <div class="rm-name">Onboarding Call</div>
-            <div class="rm-note">Aaron walks you through everything and we set up your account.</div>
-          </div>
-          <div class="rm-arrow">›</div>
-          <div class="rm-stop">
-            <div class="rm-icon">🚀</div>
-            <div class="rm-num">Call 2</div>
-            <div class="rm-name">Launch Call</div>
-            <div class="rm-note">We review your ads together and confirm your launch date.</div>
-          </div>
-          <div class="rm-arrow">›</div>
-          <div class="rm-stop">
-            <div class="rm-icon">📈</div>
-            <div class="rm-num">Then</div>
-            <div class="rm-name">Go Live</div>
-            <div class="rm-note">Your ads switch on and leads start landing in your CRM.</div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">You only ever need the page that matches your next call.</div>
-          <p>Page 2 = before your onboarding call. Page 3 = before your launch call. That's it.</p>
-        </div>
-        <div class="action-row">
-          <div class="proof-slot"></div>
-        </div>
-      </div>
-    </div>
-
+  <div class="sp-cta" style="border-top:none;padding-top:0;margin-top:0">
+    <a href="01-sign-agreement.html" class="sp-next">Start: Sign the agreement <span>→</span></a>
   </div>
 
-  <div class="primary-action">
-    <div class="pa-label">Your next action</div>
-    <div class="pa-title">Get ready for your onboarding call</div>
-    <div class="pa-note">5 things to do. Around 20 minutes.</div>
-    <a href="page-2-onboarding-call.html" class="btn-jumbo">Go to Page 2 <span class="arw">→</span></a>
-  </div>
+  <div style="margin-top:36px" data-journey-map></div>
 
   <div class="reviews">
     <div class="rv-head">
@@ -167,5 +91,6 @@ window.ATMP_REVIEWS_B=[
 </script>
 
 <script src="support.js"></script>
+<script src="journey.js"></script>
 </body>
 </html>

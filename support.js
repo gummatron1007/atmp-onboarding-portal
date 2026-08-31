@@ -313,6 +313,10 @@
   });
 
   syncAll();
+
+  /* read-only export so journey.js can read the same progress data
+     across pages without a second storage scheme */
+  window.ATMPProgress={state:state,pageId:pageId,isDone:isDone};
 })();
 
 /* ── First-login welcome + confetti (page 1 only, once ever) ── */
