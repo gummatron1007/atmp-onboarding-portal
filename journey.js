@@ -1,5 +1,5 @@
-/* ATMP Onboarding — journey rail + homepage map.
-   Draws the grouped progress rail and the welcome-page journey map.
+/* ATMP Onboarding — journey rail.
+   Draws the grouped progress rail shown at the top of every step page.
    Reads completion from window.ATMPProgress (exposed by support.js) so
    there's one source of truth for "is this step done" across pages —
    no separate storage scheme, and existing ticks keep working.
@@ -80,43 +80,8 @@
     return h;
   }
 
-  /* ── journey map (index.html only) ── */
-  function mapHTML(){
-    /* exactly one "current" step across the whole journey — the first
-       undone one in order — not per group, or both groups can show
-       "you're here" on their own first step at once */
-    var allSteps = J.filter(function(n){ return n.group; });
-    var nowNode = null;
-    for(var k=0;k<allSteps.length;k++){ if(!isDone(allSteps[k])){ nowNode = allSteps[k]; break; } }
-
-    var h = '<div class="jm">';
-    ['g1','g2'].forEach(function(g, gi){
-      h += '<div class="jm-grp">'+GROUPS[g].label+'</div>';
-      var steps = stepsIn(g);
-      steps.forEach(function(s, i){
-        var d = isDone(s), n = (s === nowNode);
-        h += '<a class="jn'+(d?' done':'')+(n?' now':'')+(i===steps.length-1?' last':'')+'" href="'+s.file+'">'
-           +   '<span class="jn-d">'+(d?'✓':(gi===0?i+1:i+5))+'</span>'
-           +   '<span class="jn-c">'
-           +     (d?'<span class="jn-b">Done</span>':(n?'<span class="jn-b">You\'re here</span>':''))
-           +     '<span class="jn-t">'+s.title+'</span>'
-           +   '</span></a>';
-      });
-      var m = gi===0 ? byId('c1') : byId('c2');
-      h += milestoneHTML(m, '');
-    });
-    h += milestoneHTML(byId('go'), 'fin');
-    return h + '</div>';
-  }
-  function milestoneHTML(m, extra){
-    return '<a class="ms '+extra+'" href="'+m.file+'">'
-      + '<span class="ms-d"><span class="ms-dm"><i>'+m.icon+'</i></span></span>'
-      + '<span class="ms-c"><span class="ms-t">'+m.title+'</span></span></a>';
-  }
-
   function render(){
     document.querySelectorAll('[data-journey-rail]').forEach(function(el){ el.innerHTML = railHTML(); });
-    document.querySelectorAll('[data-journey-map]').forEach(function(el){ el.innerHTML = mapHTML(); });
   }
 
   document.addEventListener('DOMContentLoaded', render);

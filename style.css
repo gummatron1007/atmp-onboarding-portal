@@ -594,29 +594,3 @@ h1.page-title span{color:var(--blue)}
   .sp-next{width:100%;justify-content:center}
   .sp-back{margin:2px auto 0}
 }
-
-/* ─── JOURNEY MAP (index) ─── */
-.jm{position:relative}
-.jm-grp{font-size:10.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:26px 0 12px;padding-left:54px}
-.jm-grp:first-child{margin-top:0}
-.jn{position:relative;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;padding-bottom:12px;text-decoration:none}
-.jn:before{content:"";position:absolute;left:19px;top:38px;bottom:-4px;width:2px;background:var(--border)}
-.jn.last:before{display:none}
-.jn-d{width:40px;height:40px;border-radius:12px;background:#fff;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--muted);position:relative;z-index:1}
-.jn.done .jn-d{background:#EEF9F3;border-color:#8FD6B4;color:#0C6F42}
-.jn.now .jn-d{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 5px 16px rgba(0,180,180,.32)}
-.jn-c{display:block;background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;transition:border-color .2s,transform .2s}
-.jn:hover .jn-c{border-color:#B3E8E6;transform:translateX(2px)}
-.jn.now .jn-c{border-color:var(--blue);background:#F7FDFD}
-.jn-t{display:block;font-size:15.5px;font-weight:800;color:var(--navy);line-height:1.3}
-.jn-b{float:right;font-size:10px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:#0C6F42;background:#EEF9F3;border-radius:100px;padding:3px 9px;margin-left:8px}
-.jn.now .jn-b{color:#fff;background:var(--blue)}
-.ms{display:grid;grid-template-columns:40px 1fr;gap:14px;margin:6px 0 18px;text-decoration:none}
-.ms-d{width:40px;height:40px;display:flex;align-items:center;justify-content:center}
-.ms-dm{width:26px;height:26px;background:var(--navy);transform:rotate(45deg);border-radius:5px;display:flex;align-items:center;justify-content:center;transition:transform .2s}
-.ms:hover .ms-dm{transform:rotate(45deg) scale(1.08)}
-.ms-dm i{transform:rotate(-45deg);font-size:12px;font-style:normal;color:#fff}
-.ms-c{display:block;background:linear-gradient(135deg,var(--navy),#22345C);border-radius:12px;padding:17px 20px;color:#fff}
-.ms-t{display:block;font-size:18px;font-weight:900;letter-spacing:-.3px}
-.ms.fin .ms-dm{background:#0C6F42}
-.ms.fin .ms-c{background:linear-gradient(135deg,#0C6F42,#128F57)}
