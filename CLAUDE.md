@@ -99,12 +99,11 @@ Videos live in `assets/videos/` and are referenced with a plain
 
 ## Placeholders still open
 
-Four video slots are stubbed and waiting on footage:
+Three video slots are stubbed and waiting on footage:
 
 - `page-3` · CRM 101 — *Tagging lost reasons (and why it matters)*
 - `page-3` · CRM 101 — *Adding notes and follow-up tasks*
 - `page-3` · `[PERFORMANCE DASHBOARD VIDEO]`
-- `page-3` · `[AI PHONE BOOKINGS VIDEO]`
 
 The first two currently show placeholder Loom embeds rather than a
 "coming soon" card, so they look filled but aren't.
